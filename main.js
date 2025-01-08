@@ -38,6 +38,7 @@ var mangaList = [
       name: "Bleach",
       chapter: 686,
       src: "https://upload.wikimedia.org/wikipedia/en/7/72/Bleach_cover_01.jpg"
+
     },
     {
       name: "Tokyo Revengers",
@@ -50,8 +51,13 @@ var mangaList = [
       src: "https://upload.wikimedia.org/wikipedia/en/2/21/Black_Clover_volume_1_cover.jpg"
     }
   ];
-  mangaList.map(function(){
-    $('mainpage').append(`
-        `)
+  mangaList.map(function(element){
+    $('.mainpage').append( `<div
+             id=${element.name}>
+              <img  class="manga" src=${element.src}
+                alt=${element.name}>
+                  <h2>${element.name}</h2>
+               
+                  </div>`) 
   })
   
