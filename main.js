@@ -52,7 +52,7 @@ var mangaList = [
     }
   ];
   mangaList.map(function(element){
-    $('.mainpage').append( `<div
+    $('.content').append( `<div
              id=${element.name}>
               <img  class="manga" src=${element.src}
                 alt=${element.name}>
