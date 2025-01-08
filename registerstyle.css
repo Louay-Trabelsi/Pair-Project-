@@ -21,18 +21,16 @@ body {
     padding-bottom: 2em;
   }
   
-  fieldset {
+  div {
     border: none;
     padding: 2rem 0;
-    border-bottom: 3px solid #3b3b4f;
-  }
-  
-  fieldset:last-of-type {
+    border-bottom: 3px solid #3b3b4f; 
     border-bottom: none;
   }
   
-  label {
-    display: block;
+  h1 {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0.5rem 0;
   }
   
