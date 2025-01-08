@@ -60,4 +60,15 @@ var mangaList = [
                
                   </div>`) 
   })
+
+  $('#searchbtn').on("click", function () {
+
+    $('.content').each(function () {
+      if ($(this).attr("alt").toLowerCase().includes( $("#search").val().toLowerCase())) {
+        $(this).parent().show();
+      } else {
+        $(this).parent().hide();
+      }
+    });
+  })
   
