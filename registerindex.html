@@ -4,16 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./resources/icon.png" />
-    <link rel="stylesheet" href="./registerstyle.css" />
+    <link rel="stylesheet" href="/css/registerstyle.css" />
     <title>login</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <header>
+        <img src="" alt="">
+        <div id="search">
+            <input id="searchplace" type="text" placeholder="search for a manga">
+            <button type="submit" id="searchbtn">search</button>
+        </div>
+        </header>
+
+
+    </header>
     <main>
       <form method="post">
-        <fieldset>
-          <label for="username"
-            >Enter Your username:
+        <div >
+          <label for="username">Enter Your username:
             <input id="username" name="username" type="text"  pattern="[A-Za-z]{4,}"required
           /></label>
           <label for="new-password"
@@ -25,13 +34,17 @@
               pattern="[a-z0-5]{8,}"
               required
           /></label>
-        </fieldset>
+        </div >
         <input type="submit" value="Submit" id="register" />
       </form>
     </main>
-    <footer></footer>
+    <footer>
+
+
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="main.js"></script>
+    <script src="registermain.js"></script>
   </body>
 </html>
