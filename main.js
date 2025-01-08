@@ -1,4 +1,4 @@
-document.ready(function(){
+
 var mangaList = [
     {
       name: "One Piece",
@@ -64,6 +64,8 @@ var mangaList = [
   })
 
     var input=$("#searchplace")
+    console.log(input);
+    
     var manga=$('.manga')
     console.log(input.val().toLowerCase());
   $('#searchbtn').on("click", function () {
@@ -90,6 +92,3 @@ var mangaList = [
    }
 })
 // saerch with button enter (event.which===13)
-
-
-})
