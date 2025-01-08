@@ -23,5 +23,6 @@ document.ready(function(){
        var user=Makeuser($('#username'),$('new-password'))
        users.push(user)
        localStorage.setItem("user",JSON.stringify(users))
+       location.href="index.html"
       })
 })
