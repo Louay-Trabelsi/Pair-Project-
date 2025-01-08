@@ -53,22 +53,39 @@ var mangaList = [
   ];
   mangaList.map(function(element){
     $('.content').append( `<div
-             id=${element.name}>
+             id=${element.name.replace(" ","_")}>
               <img  class="manga" src=${element.src}
-                alt=${element.name}>
+                alt=${(element.name).replace(" ","_")}>
                   <h2>${element.name}</h2>
                
                   </div>`) 
   })
 
+    var input=$("#searchplace")
+    var manga=$('.manga')
+    console.log(input.val().toLowerCase());
   $('#searchbtn').on("click", function () {
-
-    $('.content').each(function () {
-      if ($(this).attr("alt").toLowerCase().includes( $("#search").val().toLowerCase())) {
+    manga.each(function () {
+      if ($(this).attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
         $(this).parent().show();
       } else {
         $(this).parent().hide();
       }
     });
   })
+//search with button 
+
+  $('#searchplace').on("keypress",function(event){
+   if( event.which===13){
+    console.log("hello");
+    manga.each(function () {
+        if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
+          $(this).parent().show();
+        } else {
+          $(this).parent().hide();
+        }
+      })
+   }
+})
+// saerch with button enter (event.which===13)
   
