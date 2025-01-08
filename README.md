@@ -10,4 +10,4 @@ users can :
 -get quote from the manga saved in array( math.random)&& animation fadeIn fadeOut
  
 
- stop
+ 
