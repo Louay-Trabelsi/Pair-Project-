@@ -1,3 +1,4 @@
+document.ready(function(){
 var mangaList = [
     {
       name: "One Piece",
@@ -51,6 +52,7 @@ var mangaList = [
       src: "https://upload.wikimedia.org/wikipedia/en/2/21/Black_Clover_volume_1_cover.jpg"
     }
   ];
+
   mangaList.map(function(element){
     $('.content').append( `<div
              id=${element.name.replace(" ","_")}>
@@ -88,4 +90,6 @@ var mangaList = [
    }
 })
 // saerch with button enter (event.which===13)
-  
+
+
+})
