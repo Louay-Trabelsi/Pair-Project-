@@ -1,4 +1,4 @@
-document.ready(function(){
+
 var mangaList = [
     {
       name: "One Piece",
@@ -63,7 +63,7 @@ var mangaList = [
                   </div>`) 
   })
 
-    var input=$("#searchplace")
+    var input=$("#searchplace")    
     var manga=$('.manga')
     console.log(input.val().toLowerCase());
   $('#searchbtn').on("click", function () {
@@ -79,7 +79,7 @@ var mangaList = [
 
   $('#searchplace').on("keypress",function(event){
    if( event.which===13){
-    console.log("hello");
+    console.log(input.val());
     manga.each(function () {
         if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
           $(this).parent().show();
@@ -90,6 +90,38 @@ var mangaList = [
    }
 })
 // saerch with button enter (event.which===13)
-
+$('#registerlink').on('click',function(){
+    location.replace("registerindex.html")
 
 })
+$('#homebtn').on('click',function(){
+    location.replace('index.html')
+})
+var users =localStorage.getItem("users")|| [
+    { username: "JohnDoe", password: "password123" },
+    { username: "JaneSmith", password: "12345abc" },
+    { username: "MangaLover", password: "onepiece4life" },
+    { username: "AnimeFan99", password: "naruto2023" },
+    { username: "DarkKnight", password: "batman123" },
+    { username: "LightYagami", password: "kiraRules" },
+    { username: "LeviAckerman", password: "surveyCorp" },
+    { username: "ItachiUchiha", password: "sharingan007" },
+    { username: "TanjiroKamado", password: "nezukoForever" },
+    { username: "SaitamaHero", password: "onepunchMan" }
+    
+  ]
+  
+  
+  function Makeuser(name,Password){
+    var  obj={}
+        obj.username=name
+        obj.password=Password
+    return obj
+  }
+  $('#register').on('click',function(){
+    console.log($('new-password').val());
+   var user=Makeuser($('#username').val(),$('#new-password').val())
+   users.push(user)
+   localStorage.setItem("user",JSON.stringify(users))
+  location.replace("index.html")
+  })
