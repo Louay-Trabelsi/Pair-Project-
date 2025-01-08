@@ -1,16 +1,16 @@
-/* Light Mode CSS */
+/* Dark Mode CSS */
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #1e1e1e;
+    color: #f9f9f9;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header#mainheader {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    background-color: #2c2c2c;
+    border-bottom: 1px solid #444;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -23,8 +23,10 @@ header#mainheader h2 {
 
 header#mainheader input#searchplace {
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #666;
     border-radius: 3px;
+    background-color: #333;
+    color: #f9f9f9;
 }
 
 header#mainheader button#searchbtn {
@@ -71,37 +73,36 @@ main.mainpage .content {
 }
 
 main.mainpage .content div {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
     border-radius: 3px;
     overflow: hidden;
     width: calc(33.333% - 40px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 main.mainpage .content img.manga {
     width: 100%;
     height: auto;
-    cursor: pointer;
 }
 
 main.mainpage .content h2 {
     padding: 10px;
     font-size: 1.2em;
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #3b3b3b;
     margin: 0;
-    cursor: pointer;
+    color: #f9f9f9;
 }
 
 footer {
-    background-color: #fff;
-    border-top: 1px solid #ddd;
+    background-color: #2c2c2c;
+    border-top: 1px solid #444;
     padding: 10px;
     text-align: center;
 }
 
 footer p {
     margin: 0;
-    color: #555;
+    color: #bbb;
 }

@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./resources/icon.png"/>
-    <title>Almanga</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./resources/icon.png" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <title>login</title>
 </head>
+
 <body>
-    <header>
-    <img src="" alt="">
-    <h2 id="homebtn">Home</h2>
-    <div id="search">
-        <input id="searchplace" type="text" placeholder="search for a manga">
-        <button type="submit" id="searchbtn">search</button>
-    </div>
+  <header>
+    <header id="mainheader">
+        <img src="" alt="">
+        <h2 id="homebtn">Home</h2>
+        <div id="search">
+            <input id="searchplace" type="text" placeholder="search for a manga">
+            <button type="submit" id="searchbtn">search</button>
+            <div>
+                <button id="loginlink">Login</button>
+                <button id="registerlink">Register</button>
+            </div>   
     
-
-    </header>
-
-<!--  -->
-<!--  -->
-<!--  -->
-<main>
-
-</main>
-<!--  -->
-<!--  -->
-<!--  -->
-    <footer>
+        </div>
+        <button id="togglemode">togglemode</button>
+    
+        </header>
 
 
+  </header>
+  <main>
+      <div>
+        <h1>username></h1>
+        <input id="username" type="text" pattern="[A-Za-z]{4,}" placeholder="username" required>
 
-    </footer>
+        <h1 >Password:</h1>
+        <input id="npassword"  type="password" pattern="[a-z0-5]{8,}" placeholder="password" required />
+      </div>
+      <button type="submit" id="login">login</button>
+  </main>
+  <footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
-    <script src="main.js"></script>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="main.js"></script>
+
 </body>
+
 </html>

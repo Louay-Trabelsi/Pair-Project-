@@ -60,6 +60,7 @@ var mangaList = [
               <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")}>
                   <h2>${element.name}</h2>
+
                
                   </div>`) 
   })
@@ -84,45 +85,79 @@ var mangaList = [
     manga.each(function () {
         if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
           $(this).parent().show();
+          
         } else {
           $(this).parent().hide();
+          
         }
       })
+      input.val('')
    }
 })
 // saerch with button enter (event.which===13)
 $('#registerlink').on('click',function(){
     location.replace("registerindex.html")
-
 })
+
+$('#loginlink').on('click',function(){
+  location.replace("login.html")
+})
+
 $('#homebtn').on('click',function(){
     location.replace('index.html')
 })
-var users =localStorage.getItem("users")|| [
-    { username: "JohnDoe", password: "password123" },
-    { username: "JaneSmith", password: "12345abc" },
-    { username: "MangaLover", password: "onepiece4life" },
-    { username: "AnimeFan99", password: "naruto2023" },
-    { username: "DarkKnight", password: "batman123" },
-    { username: "LightYagami", password: "kiraRules" },
-    { username: "LeviAckerman", password: "surveyCorp" },
-    { username: "ItachiUchiha", password: "sharingan007" },
-    { username: "TanjiroKamado", password: "nezukoForever" },
-    { username: "SaitamaHero", password: "onepunchMan" }
-    
+
+function Makeuser(name,Password){
+  var  obj={}
+      obj.username=name
+      obj.password=Password
+      obj.bookmark=""
+  return obj
+}
+var users = [
+    Makeuser(  "JohnDoe",  "password123" ),
+    Makeuser(  "JaneSmith",  "12345abc" ),
+    Makeuser(  "MangaLover",  "onepiece4life" ),
+    Makeuser(  "AnimeFan99",  "naruto2023" ),
+    Makeuser(  "DarkKnight",  "batman123" ),
+    Makeuser(  "LightYagami",  "kiraRules" ),
+    Makeuser(  "LeviAckerman",  "surveyCorp" ),
+    Makeuser(  "ItachiUchiha",  "sharingan007" ),
+    Makeuser(  "TanjiroKamado",  "nezukoForever" ),
+    Makeuser(  "SaitamaHero",  "onepunchMan" ),
+    Makeuser( "Abdou","mypass123"),
+    Makeuser("Louay","manga789"),
   ]
+  console.log(users);
   
   
-  function Makeuser(name,Password){
-    var  obj={}
-        obj.username=name
-        obj.password=Password
-    return obj
-  }
+  
+ 
   $('#register').on('click',function(){
-    console.log($('new-password').val());
-   var user=Makeuser($('#username').val(),$('#new-password').val())
-   users.push(user)
+   users.push(Makeuser($('#new-username').val(),$('#new-password').val()))
    localStorage.setItem("user",JSON.stringify(users))
+   console.log($('#username').val());
+   $('#username').val("")
+   $('#new-password').val("")
   location.replace("index.html")
+  })
+  $('#login').on('click',function(){
+    if(localStorage.getItem("user").includes($("#username").val())){
+      $("#loginlink").val()=$("#username").val()
+      location.replace("index.html")
+    }
+  })
+
+
+  //toggle light and Dark mode
+
+  $('#togglemode').on('click', function(){ 
+    console.log($("#mode").attr("href"));
+    
+    if($("#mode").attr("href")==="/css/style.css"){
+      $("#mode").attr("href","/css/darkcss.css")
+    }  
+    else if( $("#mode").attr("href")==="/css/darkcss.css"){
+      ($("#mode").attr("href","/css/style.css"))
+    }
   })
