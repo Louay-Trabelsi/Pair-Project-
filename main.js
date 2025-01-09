@@ -156,11 +156,11 @@ var users = [
   $('#togglemode').on('click', function(){ 
     console.log($("#mode").attr("href"));
     
-    if($("#mode").attr("href")==="/css/style.css"){
-      $("#mode").attr("href","/css/darkcss.css")
+    if($("#mode").attr("href")==="./css/style.css"){
+      $("#mode").attr("href","./css/darkcss.css")
     }  
-    else if( $("#mode").attr("href")==="/css/darkcss.css"){
-      ($("#mode").attr("href","/css/style.css"))
+    else if( $("#mode").attr("href")==="./css/darkcss.css"){
+      ($("#mode").attr("href","./css/style.css"))
     }
   })
 
