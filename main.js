@@ -155,9 +155,10 @@ var mangaList = [
   mangaList.map(function(element){
     $('.content').append( `<div
              id=${element.name.replace(" ","_")} >
-             <div class="manga" style="display:inline-block"> <img  class="manga" src=${element.src}
+             <div class="mangaa" style="display:inline-block"> <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
-                <p></p>Chapter: ${element.chapter}</p></div>
+                <p>Chapter: ${element.chapter}</p></div>
+
                   <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
@@ -167,15 +168,18 @@ var mangaList = [
     var manga=$('.manga')
 
     //search with button 
-  $('#searchbtn').on("click", function () {
-    manga.each(function () {
-      if ($(this).attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
-        $(this).parent().show();
-      } else {
-        $(this).parent().hide();
-      }
-    });
-  })
+    $('#searchbtn').on("click", function () {
+      manga.each(function () {
+        var x=$(this)||manga
+      
+        
+        if (x.attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
+          $(this).parent().parent().show();
+        } else {
+          $(this).parent().parent().hide();
+        }
+      });
+    })
 
 // saerch with button enter (event.which===13)
   $('#searchplace').on("keypress",function(event){
@@ -183,10 +187,12 @@ var mangaList = [
     console.log(input.val());
     manga.each(function () {
         if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
-          $(this).parent().show();
+          console.log($(this).attr("alt").toLowerCase());
+          
+          $(this).parent().parent().show();
           
         } else {
-          $(this).parent().hide();
+          $(this).parent().parent().hide();
           
         }
       })
@@ -279,9 +285,9 @@ var users = [
   })
 
   // 
-  $(".manga").on("hover",function(){
+  // $(".manga").on("hover",function(){
 
-  })
+  // })
   
 
 
