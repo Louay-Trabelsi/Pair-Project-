@@ -45,18 +45,18 @@ var mangaList = [
     {
       name: "Tokyo Revengers",
       chapter: 278,
-      src: "https://upload.wikimedia.org/wikipedia/en/e/ed/Tokyo_Revengers_vol_1.png"
+      src: "./resources/Tokyo_Revengers.jpg"
     },
     {
       name: "Black Clover",
       chapter: 372,
-      src: "https://upload.wikimedia.org/wikipedia/en/2/21/Black_Clover_volume_1_cover.jpg"
+      src: "./resources/Black_Clover.jpg"
     }
   ];
 
   mangaList.map(function(element){
     $('.content').append( `<div
-             id=${element.name.replace(" ","_")}>
+             id=${element.name.replace(" ","_")} >
               <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
                   <h2 style="padding:10px" >${element.name} </h2>
