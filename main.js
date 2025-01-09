@@ -160,25 +160,27 @@ var mangaList = [
     genres: "Action Adventure Fantasy Magic"
   }
 ];
-;
+localStorage.setItem("mangalist",JSON.stringify(mangaList))
+
 
 // add the images to the html
   mangaList.map(function(element){
-    $('.content').append( `<div
+    $('.content').append( `<div class="eachmanga"
              id=${element.name.replace(" ","_")} >
              <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
-                alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
+                alt=${(element.name).replace(" ","_")} >
                 <p></p>Chapter: ${element.chapter}</p></div>
-                <div class="quotes" style="display:inline-block;width: 200px; height: 300px;"><h2 style="padding: 10px" >Genra:</h2>
-                <p style="padding: 10px" >${element.genres}</p>
-                <h2 style="padding: 10px" >Quotes:</h2>
-                <p style="padding: 10px"   >${element.quotes[Math.floor(Math.random()*4)]}</p>
+                <div class="quotes">
+                <h2 >Genre</h2>
+                <p >${element.genres}</p>
+                <h2 >Quotes:</h2>
+                <p   >${element.quotes[Math.floor(Math.random()*4)]}</p>
                 </div>
                   <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
   })
-
+  $(".Bookmark").hide()
     var input=$("#searchplace")    
     var manga=$('.manga')
 
@@ -229,7 +231,7 @@ $('#homebtn').on('click',function(){
 $('#logo').on('click',function(){
   location.replace('index.html')
 })
-
+// creating users
 function Makeuser(name,Password){
   var  obj={}
       obj.username=name
@@ -270,16 +272,28 @@ var users = [
       location.replace("index.html")
     }
   })
+
+
+
+  // when logged in
+
+
+
+
   if(localStorage.getItem("login",$("#username").val())==undefined){
-    $("#loginlink").html("Login")     
+    $("#loginlink").html("Login") 
+    $(".Bookmark").show()
+    $(".Bookmark").on("click",function(){
+      $(this)
+    })
+
+
 }
   else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
 
   //toggle light and Dark mode
   $('#togglemode').on('click', function(){ 
-    console.log($("#mode").attr("href"));
-    
     if($("#mode").attr("href")==="./css/style.css"){
       $("#mode").attr("href","./css/darkcss.css")
     }  
@@ -300,9 +314,8 @@ var users = [
   })
 
   // 
-  // $(".manga").on("hover",function(){
+ 
 
-  // })
   
 
 
