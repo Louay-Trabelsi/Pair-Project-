@@ -1,3 +1,4 @@
+// this is our manga list
 var mangaList = [
   {
     name: "One Piece",
@@ -160,150 +161,206 @@ var mangaList = [
     genres: "Action Adventure Fantasy Magic",
   },
 ];
+localStorage.setItem("mangalist",JSON.stringify(mangaList))
+
+
 // add the images to the html
-mangaList.map(function (element) {
-  $(".content").append(`<div
-             id=${element.name.replace(" ", "_")} class=="mangainfoholedr" >
-             <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${
-               element.src
-             }
-                alt=${element.name.replace(
-                  " ",
-                  "_"
-                )} style="width: 200px; height: 300px;padding: 10px;">
-                <h2 style="padding:10px; " id="manganame" >${element.name} </h2>
+  mangaList.map(function(element){
+    $('.content').append( `<div class="eachmanga"
+             id=${element.name.replace(" ","_")} >
+             <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
+                alt=${(element.name).replace(" ","_")} >
                 <p></p>Chapter: ${element.chapter}</p></div>
-                <div id="mangainfo"><h2 style="padding: 10px" >Genres:</h2>
-                <p style="padding: 10px" >${element.genres}</p>
-                <h2 id="quotes" >Quotes:</h2>
-                <p id="mangaquotes"  >${
-                  element.quotes[Math.floor(Math.random() * element.quotes.length)]
-                }</p>
-                <input type="button" value="Bookmark" id=${element.name.replace(
-                  " ",
-                  "_"
-                )} class="bookmark">
+                <div class="quotes">
+                <h2 >Genre</h2>
+                <p >${element.genres}</p>
+                <h2 >Quotes:</h2>
+                <p   >${element.quotes[Math.floor(Math.random()*element.quotes.length)]}</p>
                 </div>
-                  
+                  <h2 style="padding:10px" >${element.name} </h2>
                
-                  </div>`);
-});
+                  </div>`) 
+  })
+  $(".Bookmark").hide()
+    var input=$("#searchplace")    
+    var manga=$('.manga')
 
-var input = $("#searchplace");
-var manga = $(".manga");
-
-//search with button
-$("#searchbtn").on("click", function () {
-  manga.each(function () {
-    if ($(this).attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
-      $(this).parent().parent().show();
-    } else {
-      $(this).parent().parent().hide();
-    }
-  });
-});
+    //search with button 
+    $('#searchbtn').on("click", function () {
+      manga.each(function () {
+        var x=$(this)||manga
+      
+        
+        if (x.attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
+          $(this).parent().parent().show();
+        } else {
+          $(this).parent().parent().hide();
+        }
+      });
+    })
 
 // saerch with button enter (event.which===13)
 $("#searchplace").on("keypress", function (event) {
   if (event.which === 13) {
     console.log(input.val());
     manga.each(function () {
-      if (
-        $(this)
-          .attr("alt")
-          .toLowerCase()
-          .includes(input.val().replace(" ", "_").toLowerCase())
-      ) {
-        $(this).parent().show();
-      } else {
-        $(this).parent().hide();
-      }
-    });
-    input.val("");
-  }
-});
-// headr buttons
-$("#registerlink").on("click", function () {
-  location.replace("registerindex.html");
-});
+        if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
+          console.log($(this).attr("alt").toLowerCase());
+          
+          $(this).parent().parent().show();
+          
+        } else {
+          $(this).parent().parent().hide();
+          
+        }
+      })
+      input.val('')
+   }
+})
+// headr buttons 
+$('#registerlink').on('click',function(){
+    location.replace("registerindex.html")
+})
 
 $("#loginlink").on("click", function () {
   location.replace("login.html");
 });
 
-$("#homebtn").on("click", function () {
-  location.replace("index.html");
-});
-$("#logo").on("click", function () {
-  location.replace("index.html");
-});
-
-function Makeuser(name, Password) {
-  var obj = {};
-  obj.username = name;
-  obj.password = Password;
-  obj.bookmark = "";
-  return obj;
+$('#homebtn').on('click',function(){
+    location.replace('index.html')
+})
+$('#logo').on('click',function(){
+  location.replace('index.html')
+})
+// creating users
+function Makeuser(name,Password){
+  var  obj={}
+      obj.username=name
+      obj.password=Password
+      obj.bookmark=""
+  return obj
 }
 var users = [
-  Makeuser("JohnDoe", "password123"),
-  Makeuser("JaneSmith", "12345abc"),
-  Makeuser("MangaLover", "onepiece4life"),
-  Makeuser("AnimeFan99", "naruto2023"),
-  Makeuser("DarkKnight", "batman123"),
-  Makeuser("LightYagami", "kiraRules"),
-  Makeuser("LeviAckerman", "surveyCorp"),
-  Makeuser("ItachiUchiha", "sharingan007"),
-  Makeuser("TanjiroKamado", "nezukoForever"),
-  Makeuser("SaitamaHero", "onepunchMan"),
-  Makeuser("Abdou", "mypass123"),
-  Makeuser("Louay", "manga789"),
-];
-//register section
-$("#register").on("click", function () {
-  users.push(Makeuser($("#new-username").val(), $("#new-password").val()));
-  localStorage.setItem("user", JSON.stringify(users));
-  console.log($("#username").val());
-  $("#username").val("");
-  $("#new-password").val("");
-  location.replace("index.html");
-});
+    Makeuser( "JohnDoe",  "password123" ),
+    Makeuser( "JaneSmith",  "12345abc" ),
+    Makeuser( "MangaLover",  "onepiece4life" ),
+    Makeuser( "AnimeFan99",  "naruto2023" ),
+    Makeuser( "DarkKnight",  "batman123" ),
+    Makeuser(  "LightYagami",  "kiraRules" ),
+    Makeuser(  "LeviAckerman",  "surveyCorp" ),
+    Makeuser(  "ItachiUchiha",  "sharingan007" ),
+    Makeuser(  "TanjiroKamado",  "nezukoForever" ),
+    Makeuser(  "SaitamaHero",  "onepunchMan" ),
+    Makeuser( "Abdou","mypass123"),
+    Makeuser("Louay","manga789"),
+  ]
+  localStorage.setItem("user",JSON.stringify(users)) 
+ //register section
+  $('#register').on('click',function(){
+   users.push(Makeuser($('#new-username').val(),$('#new-password').val()))
+   localStorage.setItem("user",JSON.stringify(users))
+   console.log($('#username').val());
+   $('#username').val("")
+   $('#new-password').val("")
+  location.replace("index.html")
+  })
+
 
 //login section
-$("#login").on("click", function () {
-  if (localStorage.getItem("user").includes($("#username").val())) {
-    $("#loginlink").html($("#username").val());
-    localStorage.setItem("login", $("#username").val());
-    location.replace("index.html");
-  }
-});
-if (localStorage.getItem("login", $("#username").val()) == undefined) {
-  $("#loginlink").html("Login");
-} else {
-  $("#loginlink").html(localStorage.getItem("login", $("#username").val())) &&
-    $("#registerlink").hide();
+  $('#login').on('click',function(){
+    if(localStorage.getItem("user").includes($("#username").val())){
+      $("#loginlink").html($("#username").val())
+      localStorage.setItem("login",$("#username").val())
+      location.replace("index.html")
+    }
+  })
+
+
+
+  // when logged in
+
+
+
+
+  if(localStorage.getItem("login",$("#username").val())==undefined){
+    $("#loginlink").html("Login") 
+    $(".Bookmark").show()
+    $(".Bookmark").on("click",function(){
+      $(this)
+    })
+
+
+}
+  else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
+
+
+  //toggle light and Dark mode
+  $('#togglemode').on('click', function(){ 
+    if($("#mode").attr("href")==="./css/light.css"){
+      $("#mode").attr("href","./css/dark.css")
+    }  
+    else if( $("#mode").attr("href")==="./css/dark.css"){
+      ($("#mode").attr("href","./css/light.css"))
+    }
+  })
+
+  $('#togglemode').on('click', function(){ 
+    console.log($("#mode").attr("href"));
+    
+    if($("#mode").attr("href")==="./css/register.css"){
+      $("#mode").attr("href","./css/registerdarkstyle.css")
+    }  
+    else if( $("#mode").attr("href")==="./css/registerdarkstyle.css"){
+      ($("#mode").attr("href","./css/register.css"))
+    }
+  })
+
+  // 
+ 
+
+  // Function to change image on hover
+
+
+function enableImageHoverEffect() {
+  $('.manga').hover(
+      function () {
+          const parentDivId = $(this).closest('.eachmanga').attr('id');
+          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+
+          if (mangaItem) {
+              let index = 0;
+              const imageElement = $(this);
+
+              // Start changing the image every 0.5 seconds
+              const intervalId = setInterval(function ()  {
+                  index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
+                  imageElement.attr('src', mangaItem.imageGallery[index]);
+              }, 1000);
+
+              // Store the interval ID in the element's data
+              $(this).data('intervalId', intervalId);
+          }
+      },
+      function () {
+          // Stop changing the image when the hover ends
+          clearInterval($(this).data('intervalId'));
+
+          // Reset the image back to the main one
+          const parentDivId = $(this).closest('.eachmanga').attr('id');
+          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          if (mangaItem) {
+              $(this).attr('src', mangaItem.src);
+          }
+      }
+  );
 }
 
-//toggle light and Dark mode
-$("#togglemode").on("click", function () {
-  console.log($("#mode").attr("href"));
+// Call the function after appending manga elements
+enableImageHoverEffect();
 
-  if ($("#mode").attr("href") === "./css/style.css") {
-    $("#mode").attr("href", "./css/darkcss.css");
-  } else if ($("#mode").attr("href") === "./css/darkcss.css") {
-    $("#mode").attr("href", "./css/style.css");
-  }
-});
 
-$("#togglemode").on("click", function () {
-  console.log($("#mode").attr("href"));
+  
 
-  if ($("#mode").attr("href") === "./css/register.css") {
-    $("#mode").attr("href", "./css/registerdarkstyle.css");
-  } else if ($("#mode").attr("href") === "./css/registerdarkstyle.css") {
-    $("#mode").attr("href", "./css/register.css");
-  }
-});
 
-//
-$(".manga").on("hover", function () {});
+  
+  
