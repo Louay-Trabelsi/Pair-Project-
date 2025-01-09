@@ -140,6 +140,7 @@ var users = [
    $('#new-password').val("")
   location.replace("index.html")
   })
+  
   $('#login').on('click',function(){
     if(localStorage.getItem("user").includes($("#username").val())){
       $("#loginlink").val()=$("#username").val()
