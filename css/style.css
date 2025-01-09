@@ -73,7 +73,6 @@ main.mainpage {
 main.mainpage .content {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* display: flex; */
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -111,4 +110,8 @@ footer {
 footer p {
     margin: 0;
     color: #555;
+}
+
+header#mainheader img#logo:hover{
+    cursor: pointer;
 }

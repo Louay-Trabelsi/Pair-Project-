@@ -1,6 +1,3 @@
-$('#logo').width("200px")
-$("#logo").height("100px")
-
 var mangaList = [
   {
     name: "One Piece",
@@ -158,9 +155,9 @@ var mangaList = [
   mangaList.map(function(element){
     $('.content').append( `<div
              id=${element.name.replace(" ","_")} >
-              <img  class="manga" src=${element.src}
+             <div class="manga" style="display:inline-block"> <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
-                
+                <p></p>Chapter: ${element.chapter}</p></div>
                   <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
