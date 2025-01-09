@@ -57,7 +57,8 @@ header#mainheader div {
 }
 
 header#mainheader button#loginlink,
-header#mainheader button#registerlink {
+header#mainheader button#registerlink,
+header#mainheader button#logoutlink{
     padding: 5px 10px;
     background-color: purple;
     color: black;
