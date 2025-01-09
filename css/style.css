@@ -22,7 +22,7 @@ header#mainheader img#logo {
     
 }
 
-header#mainheader h2 {
+header#mainheader h1 {
     cursor: pointer;
 }
 
@@ -91,7 +91,7 @@ main.mainpage .content img.manga {
     cursor: pointer;
 }
 
-main.mainpage .content h2 {
+main.mainpage .content h1 {
     padding: 10px;
     font-size: 1.2em;
     text-align: center;
