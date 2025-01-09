@@ -78,8 +78,9 @@ main.mainpage {
 
 main.mainpage .content {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
+    justify-content: space-between;
 }
 
 
@@ -91,10 +92,13 @@ main.mainpage .content div {
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px;
+    border-radius: 12px;
 }
 
+
 main.mainpage .content img.manga {
-    width: 400px;
+    width: 100%;
     height: 500px;
 }
 

@@ -12,7 +12,7 @@ var mangaList = [
     quotes: [
       "When do you think people die? When they are shot with a bullet? No. When they eat a soup made from a poisonous mushroom? No. They die... when they are forgotten!",
       "Power isn't determined by your size, but the size of your heart and dreams!",
-      "I'm going to become the Pirate King!"
+      "I'm going to become the Pirate King!",
     ],
     genres: "Adventure Action Fantasy Comedy"
   },
@@ -28,7 +28,7 @@ var mangaList = [
     quotes: [
       "Hard work is worthless for those that don’t believe in themselves.",
       "When a man learns to love, he must bear the risk of hatred.",
-      "I never go back on my word. That is my ninja way!"
+      "I never go back on my word. That is my ninja way!",
     ],
     genres: "Adventure Action Martial Arts Fantasy"
   },
@@ -39,14 +39,14 @@ var mangaList = [
     imageGallery: [
       "./resources/aot1.jpg",
       "./resources/aot2.jpg",
-      "./resources/aot3.jpg"
+      "./resources/aot3.jpg",
     ],
     quotes: [
       "If you win, you live. If you lose, you die. If you don’t fight, you can’t win!",
       "I want to see and understand the world outside. I don’t want to die inside these walls without knowing what’s out there!",
-      "This world is merciless, and it’s also very beautiful."
+      "This world is merciless, and it’s also very beautiful.",
     ],
-    genres: "Action Drama Dark Fantasy Tragedy"
+    genres: "Action Drama Dark Fantasy Tragedy",
   },
   {
     name: "My Hero Academia",
@@ -55,14 +55,14 @@ var mangaList = [
     imageGallery: [
       "./resources/mha1.jpg",
       "./resources/mha2.jpg",
-      "./resources/mha3.jpg"
+      "./resources/mha3.jpg",
     ],
     quotes: [
       "When you have to save someone, they’re usually in a scary situation. A true hero saves not only their lives but also their spirits.",
       "Dreams can become reality. You just have to keep chasing them.",
-      "Go beyond! Plus Ultra!"
+      "Go beyond! Plus Ultra!",
     ],
-    genres: "Action Superhero Comedy Fantasy"
+    genres: "Action Superhero Comedy Fantasy",
   },
   {
     name: "Demon Slayer",
@@ -71,14 +71,14 @@ var mangaList = [
     imageGallery: [
       "./resources/ds1.jpg",
       "./resources/ds2.jpg",
-      "./resources/ds3.jpg"
+      "./resources/ds3.jpg",
     ],
     quotes: [
       "Go forward! You still have everyone!",
       "A lesson without pain is meaningless.",
-      "Don’t stop! Keep running!"
+      "Don’t stop! Keep running!",
     ],
-    genres: "Action Dark Fantasy Supernatural Drama"
+    genres: "Action Dark Fantasy Supernatural Drama",
   },
   {
     name: "Jujutsu Kaisen",
@@ -87,14 +87,14 @@ var mangaList = [
     imageGallery: [
       "./resources/jjk1.jpg",
       "./resources/jjk2.jpg",
-      "./resources/jjk3.jpg"
+      "./resources/jjk3.jpg",
     ],
     quotes: [
       "I don’t know how I’ll feel when I’m dead, but I don’t want to regret the way I lived.",
       "It’s not about whether I can. I have to do it.",
-      "Being weak is nothing to be ashamed of. Staying weak is."
+      "Being weak is nothing to be ashamed of. Staying weak is.",
     ],
-    genres: "Action Dark Fantasy Supernatural Drama"
+    genres: "Action Dark Fantasy Supernatural Drama",
   },
   {
     name: "Chainsaw Man",
@@ -103,14 +103,14 @@ var mangaList = [
     imageGallery: [
       "./resources/csm1.jpg",
       "./resources/csm2.jpg",
-      "./resources/csm3.jpg"
+      "./resources/csm3.jpg",
     ],
     quotes: [
       "My dream is to touch some boobs.",
       "Don’t open the door.",
-      "The happiness of living a normal life and eating good food is enough for me."
+      "The happiness of living a normal life and eating good food is enough for me.",
     ],
-    genres: "Action Dark Fantasy Horror Comedy"
+    genres: "Action Dark Fantasy Horror Comedy",
   },
   {
     name: "Bleach",
@@ -119,14 +119,14 @@ var mangaList = [
     imageGallery: [
       "./resources/bleach1.jpg",
       "./resources/bleach2.jpg",
-      "./resources/bleach3.jpg"
+      "./resources/bleach3.jpg",
     ],
     quotes: [
       "We are all like fireworks: we climb, we shine and always go our separate ways and become further apart.",
       "A man is not worth a damn if he can’t protect his friends.",
-      "If I don’t wield the sword, I can’t protect you. If I keep wielding the sword, I can’t embrace you."
+      "If I don’t wield the sword, I can’t protect you. If I keep wielding the sword, I can’t embrace you.",
     ],
-    genres: "Action Supernatural Adventure Fantasy"
+    genres: "Action Supernatural Adventure Fantasy",
   },
   {
     name: "Tokyo Revengers",
@@ -135,14 +135,14 @@ var mangaList = [
     imageGallery: [
       "./resources/tr1.jpg",
       "./resources/tr2.jpg",
-      "./resources/tr3.jpg"
+      "./resources/tr3.jpg",
     ],
     quotes: [
       "It’s not how you start. It’s how you end.",
       "You don’t need to bow your head. Just have a heart that cares.",
-      "No matter how hard things get, only the strong can move forward."
+      "No matter how hard things get, only the strong can move forward.",
     ],
-    genres: "Action Drama Time Travel Crime"
+    genres: "Action Drama Time Travel Crime",
   },
   {
     name: "Black Clover",
@@ -151,15 +151,15 @@ var mangaList = [
     imageGallery: [
       "./resources/bc1.jpg",
       "./resources/bc2.jpg",
-      "./resources/bc3.jpg"
+      "./resources/bc3.jpg",
     ],
     quotes: [
       "Surpass your limits. Right here. Right now.",
       "If you don’t give up, you’ll get through.",
-      "Magic is not everything."
+      "Magic is not everything.",
     ],
-    genres: "Action Adventure Fantasy Magic"
-  }
+    genres: "Action Adventure Fantasy Magic",
+  },
 ];
 localStorage.setItem("mangalist",JSON.stringify(mangaList))
 
@@ -168,7 +168,7 @@ localStorage.setItem("mangalist",JSON.stringify(mangaList))
   mangaList.map(function(element){
     $('.content').append( `<div class="eachmanga"
              id=${element.name.replace(" ","_")} >
-             <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
+             <div class="mangaa" > <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} >
                 <p></p>Chapter: ${element.chapter}</p></div>
                 <div class="quotes">
@@ -200,8 +200,8 @@ localStorage.setItem("mangalist",JSON.stringify(mangaList))
     })
 
 // saerch with button enter (event.which===13)
-  $('#searchplace').on("keypress",function(event){
-   if( event.which===13){
+$("#searchplace").on("keypress", function (event) {
+  if (event.which === 13) {
     console.log(input.val());
     manga.each(function () {
         if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
@@ -222,9 +222,9 @@ $('#registerlink').on('click',function(){
     location.replace("registerindex.html")
 })
 
-$('#loginlink').on('click',function(){
-  location.replace("login.html")
-})
+$("#loginlink").on("click", function () {
+  location.replace("login.html");
+});
 
 $('#homebtn').on('click',function(){
     location.replace('index.html')
@@ -275,12 +275,10 @@ var users = [
     }
   })
 
+  
 
 
   // when logged in
-
-
-
 
   if(localStorage.getItem("login",$("#username").val())==undefined){
     $("#loginlink").html("Login") 
@@ -288,9 +286,12 @@ var users = [
     $(".Bookmark").on("click",function(){
       $(this)
     })
+    $('#logoutlink').hide()
 }
   else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
+  //lo
+  
 
   //toggle light and Dark mode
   $('#togglemode').on('click', function(){ 
@@ -322,15 +323,15 @@ var users = [
 function enableImageHoverEffect() {
   $('.manga').hover(
       function () {
-          var parentDivId = $(this).closest('.eachmanga').attr('id');
-          var mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var  parentDivId = $(this).closest('.eachmanga').attr('id');
+          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
 
           if (mangaItem) {
-              var index = 0;
-              var imageElement = $(this);
+              var  index = 0;
+              var  imageElement = $(this);
 
               // Start changing the image every 0.5 seconds
-              var intervalId = setInterval(function ()  {
+              var  intervalId = setInterval(function ()  {
                   index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
                   imageElement.attr('src', mangaItem.imageGallery[index]);
               }, 1000);
@@ -344,8 +345,8 @@ function enableImageHoverEffect() {
           clearInterval($(this).data('intervalId'));
 
           // Reset the image back to the main one
-          var parentDivId = $(this).closest('.eachmanga').attr('id');
-          var mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var  parentDivId = $(this).closest('.eachmanga').attr('id');
+          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
           if (mangaItem) {
               $(this).attr('src', mangaItem.src);
           }
@@ -355,6 +356,25 @@ function enableImageHoverEffect() {
 
 // Call the function after appending manga elements
 enableImageHoverEffect();
+
+
+function login() {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let users = JSON.parse(localStorage.getItem("user"));
+  let user = users.find((user) => user.username === username && user.password === password);
+  if (user) {
+    localStorage.setItem("login", username);
+    location.replace("index.html");
+  } else {
+    alert("Invalid username or password");
+  }
+} ;
+
+function logout() {
+  localStorage.removeItem("login");
+  location.replace("index.html");
+}
 
 
   
