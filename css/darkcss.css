@@ -84,12 +84,21 @@ main.mainpage .content div {
     border: 1px solid #444;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 4px rgba(248, 247, 247, 0.392);
+    padding: 10px;
+    margin: auto;
 }
 
 main.mainpage .content img.manga {
     width: 100%;
     height: auto;
+}
+
+#manganame{
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
 
 main.mainpage .content h1 {

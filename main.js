@@ -176,7 +176,8 @@ localStorage.setItem("mangalist",JSON.stringify(mangaList))
                 <h2 >Quotes:</h2>
                 <p   >${element.quotes[Math.floor(Math.random()*4)]}</p>
                 </div>
-                  <h2 style="padding:10px" >${element.name} </h2>
+                <input type="button" value="Bookmark" id=${(element.name).replace(" ","_")} class="bookmark">
+                  
                
                   </div>`) 
   })
