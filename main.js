@@ -272,5 +272,13 @@ var users = [
     }
   })
 
-  //filling the naruto page
-
+  $('#togglemode').on('click', function(){ 
+    console.log($("#mode").attr("href"));
+    
+    if($("#mode").attr("href")==="./css/register.css"){
+      $("#mode").attr("href","./css/registerdarkstyle.css")
+    }  
+    else if( $("#mode").attr("href")==="./css/registerdarkstyle.css"){
+      ($("#mode").attr("href","./css/register.css"))
+    }
+  })
