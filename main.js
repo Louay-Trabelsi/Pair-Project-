@@ -105,6 +105,9 @@ $('#loginlink').on('click',function(){
 $('#homebtn').on('click',function(){
     location.replace('index.html')
 })
+$('#logo').on('click',function(){
+  location.replace('index.html')
+})
 
 function Makeuser(name,Password){
   var  obj={}
@@ -140,13 +143,18 @@ var users = [
    $('#new-password').val("")
   location.replace("index.html")
   })
-  
+
   $('#login').on('click',function(){
     if(localStorage.getItem("user").includes($("#username").val())){
-      $("#loginlink").val()=$("#username").val()
+      $("#loginlink").html($("#username").val())
+      localStorage.setItem("login",$("#username").val())
       location.replace("index.html")
     }
   })
+  if(localStorage.getItem("login",$("#username").val())==undefined){
+    $("#loginlink").html("Login")     
+}
+  else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
 
   //toggle light and Dark mode
