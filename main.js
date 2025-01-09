@@ -1,6 +1,3 @@
-$('#logo').width("200px")
-$("#logo").height("100px")
-
 var mangaList = [
   {
     name: "One Piece",
