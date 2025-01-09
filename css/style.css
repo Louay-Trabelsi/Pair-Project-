@@ -75,6 +75,7 @@ main.mainpage .content {
     grid-template-columns: auto auto auto;
     flex-wrap: wrap;
     gap: 20px;
+   
 }
 
 main.mainpage .content div {
@@ -83,6 +84,27 @@ main.mainpage .content div {
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: auto;
+}
+
+#mangaquotes{
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
+}
+#quotes{
+    font-size: 1.2em;
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
+}
+
+#manganame{
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
 
 main.mainpage .content img.manga {

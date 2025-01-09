@@ -169,12 +169,12 @@ var mangaList = [
              <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
                 <p></p>Chapter: ${element.chapter}</p></div>
-                <div class="quotes" style="display:inline-block;width: 200px; height: 300px;"><h2 style="padding: 10px" >Genra:</h2>
+                <div class="quotes" style="display:inline-block;width: 200px; height: 300px;"><h2 style="padding: 10px" >Genres:</h2>
                 <p style="padding: 10px" >${element.genres}</p>
-                <h2 style="padding: 10px" >Quotes:</h2>
-                <p style="padding: 10px"   >${element.quotes[Math.floor(Math.random()*4)]}</p>
+                <h2 style="padding: 10px" id="quotes" >Quotes:</h2>
+                <p style="padding: 10px" id="mangaquotes"  >${element.quotes[Math.floor(Math.random()*3)]}</p>
                 </div>
-                  <h2 style="padding:10px" >${element.name} </h2>
+                  <h2 style="padding:10px; " id="manganame" >${element.name} </h2>
                
                   </div>`) 
   })
@@ -186,9 +186,9 @@ var mangaList = [
   $('#searchbtn').on("click", function () {
     manga.each(function () {
       if ($(this).attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
-        $(this).parent().show();
+        $(this).parent().parent().show();
       } else {
-        $(this).parent().hide();
+        $(this).parent().parent().hide();
       }
     });
   })
