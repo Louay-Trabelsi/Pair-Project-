@@ -86,16 +86,41 @@ main.mainpage .content div {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 10px;
     margin: auto;
+    height: 500px;
 }
-
-#mangaquotes{
+.mangainfoholedr{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
+}
+#mangainfo{
+    margin-bottom: 0px;
+    display:inline-block;width: 200px; height: 300px;
+    padding: 10px;
     text-align: center;
     font-size: 1.2em;
     margin: 0;
     background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
+    height: 100%;
+}
+
+#mangaquotes{
+    padding: 10px;
+    text-align: center;
+
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
 #quotes{
-    font-size: 1.2em;
+    margin: 0;
+    background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
+}
+#bookmark{
+    
     margin: 0;
     background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }

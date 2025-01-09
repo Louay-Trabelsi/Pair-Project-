@@ -165,16 +165,18 @@ var mangaList = [
 // add the images to the html
   mangaList.map(function(element){
     $('.content').append( `<div
-             id=${element.name.replace(" ","_")} >
+             id=${element.name.replace(" ","_")} class=="mangainfoholedr" >
              <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
+                <h2 style="padding:10px; " id="manganame" >${element.name} </h2>
                 <p></p>Chapter: ${element.chapter}</p></div>
-                <div class="quotes" style="display:inline-block;width: 200px; height: 300px;"><h2 style="padding: 10px" >Genres:</h2>
+                <div id="mangainfo"><h2 style="padding: 10px" >Genres:</h2>
                 <p style="padding: 10px" >${element.genres}</p>
-                <h2 style="padding: 10px" id="quotes" >Quotes:</h2>
-                <p style="padding: 10px" id="mangaquotes"  >${element.quotes[Math.floor(Math.random()*3)]}</p>
+                <h2 id="quotes" >Quotes:</h2>
+                <p id="mangaquotes"  >${element.quotes[Math.floor(Math.random()*3)]}</p>
+                <input type="button" value="Bookmark" id="bookmark" >
                 </div>
-                  <h2 style="padding:10px; " id="manganame" >${element.name} </h2>
+                  
                
                   </div>`) 
   })
