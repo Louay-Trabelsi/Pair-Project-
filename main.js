@@ -1,3 +1,4 @@
+// this is our manga list
 var mangaList = [
   {
     name: "One Piece",
@@ -174,10 +175,9 @@ localStorage.setItem("mangalist",JSON.stringify(mangaList))
                 <h2 >Genre</h2>
                 <p >${element.genres}</p>
                 <h2 >Quotes:</h2>
-                <p   >${element.quotes[Math.floor(Math.random()*4)]}</p>
+                <p   >${element.quotes[Math.floor(Math.random()*element.quotes.length)]}</p>
                 </div>
-                <input type="button" value="Bookmark" id=${(element.name).replace(" ","_")} class="bookmark">
-                  
+                  <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
   })
@@ -254,6 +254,7 @@ var users = [
     Makeuser( "Abdou","mypass123"),
     Makeuser("Louay","manga789"),
   ]
+  localStorage.setItem("user",JSON.stringify(users)) 
  //register section
   $('#register').on('click',function(){
    users.push(Makeuser($('#new-username').val(),$('#new-password').val()))
@@ -295,11 +296,11 @@ var users = [
 
   //toggle light and Dark mode
   $('#togglemode').on('click', function(){ 
-    if($("#mode").attr("href")==="./css/style.css"){
-      $("#mode").attr("href","./css/darkcss.css")
+    if($("#mode").attr("href")==="./css/light.css"){
+      $("#mode").attr("href","./css/dark.css")
     }  
-    else if( $("#mode").attr("href")==="./css/darkcss.css"){
-      ($("#mode").attr("href","./css/style.css"))
+    else if( $("#mode").attr("href")==="./css/dark.css"){
+      ($("#mode").attr("href","./css/light.css"))
     }
   })
 
@@ -316,6 +317,47 @@ var users = [
 
   // 
  
+
+  // Function to change image on hover
+
+
+function enableImageHoverEffect() {
+  $('.manga').hover(
+      function () {
+          const parentDivId = $(this).closest('.eachmanga').attr('id');
+          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+
+          if (mangaItem) {
+              let index = 0;
+              const imageElement = $(this);
+
+              // Start changing the image every 0.5 seconds
+              const intervalId = setInterval(function ()  {
+                  index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
+                  imageElement.attr('src', mangaItem.imageGallery[index]);
+              }, 1000);
+
+              // Store the interval ID in the element's data
+              $(this).data('intervalId', intervalId);
+          }
+      },
+      function () {
+          // Stop changing the image when the hover ends
+          clearInterval($(this).data('intervalId'));
+
+          // Reset the image back to the main one
+          const parentDivId = $(this).closest('.eachmanga').attr('id');
+          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          if (mangaItem) {
+              $(this).attr('src', mangaItem.src);
+          }
+      }
+  );
+}
+
+// Call the function after appending manga elements
+enableImageHoverEffect();
+
 
   
 
