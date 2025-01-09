@@ -19,6 +19,7 @@ header#mainheader {
 header#mainheader img#logo {
     width: 500px;
     height: auto
+    
 }
 
 header#mainheader h1 {
@@ -77,20 +78,6 @@ main.mainpage .content {
    
 }
 
-main.mainpage .content .quotes {
-    display: inline-block;
-    width: 200px;
-    height: 300px;
-}
-
-main.mainpage .content .quotes h2 {
-    padding: 10px
-}
-
-main.mainpage .content .quotes p {
-    padding: 10px
-}
-
 main.mainpage .content div {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -147,10 +134,9 @@ main.mainpage .content div {
     background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
 
-main.mainpage .content .mangaa img.manga {
-    width: 200px;
-    height: 300px;
-    padding: 10px;
+main.mainpage .content img.manga {
+    width: 100%;
+    height: auto;
     cursor: pointer;
 }
 
@@ -175,6 +161,6 @@ footer p {
     color: #555;
 }
 
-header#mainheader img#logo:hover {
+header#mainheader img#logo:hover{
     cursor: pointer;
 }
