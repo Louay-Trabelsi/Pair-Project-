@@ -162,7 +162,7 @@ var mangaList = [
 ];
 ;
 
-
+// add the images to the html
   mangaList.map(function(element){
     $('.content').append( `<div
              id=${element.name.replace(" ","_")} >
@@ -294,12 +294,12 @@ var users = [
     }
   })
 
-  //naruto main
-  
-  mangaList.each(function(element){
-    $('.narutogallery').fadeOut(500)
-    $(".narutogallery").attr("src",element.imageGallery[0])
-    $('.narutogallery').fadeIn(500)
+  // 
+  $(".manga").on("hover",function(){
+
   })
+  
+
+
   
   
