@@ -290,7 +290,7 @@ var users = [
 }
   else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
-  //logout
+  //lo
   
 
   //toggle light and Dark mode
