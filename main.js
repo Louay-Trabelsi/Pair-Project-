@@ -12,7 +12,8 @@ var mangaList = [
       "When do you think people die? When they are shot with a bullet? No. When they eat a soup made from a poisonous mushroom? No. They die... when they are forgotten!",
       "Power isn't determined by your size, but the size of your heart and dreams!",
       "I'm going to become the Pirate King!"
-    ]
+    ],
+    genres: "Adventure Action Fantasy Comedy"
   },
   {
     name: "Naruto",
@@ -27,7 +28,8 @@ var mangaList = [
       "Hard work is worthless for those that don’t believe in themselves.",
       "When a man learns to love, he must bear the risk of hatred.",
       "I never go back on my word. That is my ninja way!"
-    ]
+    ],
+    genres: "Adventure Action Martial Arts Fantasy"
   },
   {
     name: "Attack on Titan",
@@ -42,7 +44,8 @@ var mangaList = [
       "If you win, you live. If you lose, you die. If you don’t fight, you can’t win!",
       "I want to see and understand the world outside. I don’t want to die inside these walls without knowing what’s out there!",
       "This world is merciless, and it’s also very beautiful."
-    ]
+    ],
+    genres: "Action Drama Dark Fantasy Tragedy"
   },
   {
     name: "My Hero Academia",
@@ -57,7 +60,8 @@ var mangaList = [
       "When you have to save someone, they’re usually in a scary situation. A true hero saves not only their lives but also their spirits.",
       "Dreams can become reality. You just have to keep chasing them.",
       "Go beyond! Plus Ultra!"
-    ]
+    ],
+    genres: "Action Superhero Comedy Fantasy"
   },
   {
     name: "Demon Slayer",
@@ -72,7 +76,8 @@ var mangaList = [
       "Go forward! You still have everyone!",
       "A lesson without pain is meaningless.",
       "Don’t stop! Keep running!"
-    ]
+    ],
+    genres: "Action Dark Fantasy Supernatural Drama"
   },
   {
     name: "Jujutsu Kaisen",
@@ -87,7 +92,8 @@ var mangaList = [
       "I don’t know how I’ll feel when I’m dead, but I don’t want to regret the way I lived.",
       "It’s not about whether I can. I have to do it.",
       "Being weak is nothing to be ashamed of. Staying weak is."
-    ]
+    ],
+    genres: "Action Dark Fantasy Supernatural Drama"
   },
   {
     name: "Chainsaw Man",
@@ -102,7 +108,8 @@ var mangaList = [
       "My dream is to touch some boobs.",
       "Don’t open the door.",
       "The happiness of living a normal life and eating good food is enough for me."
-    ]
+    ],
+    genres: "Action Dark Fantasy Horror Comedy"
   },
   {
     name: "Bleach",
@@ -117,7 +124,8 @@ var mangaList = [
       "We are all like fireworks: we climb, we shine and always go our separate ways and become further apart.",
       "A man is not worth a damn if he can’t protect his friends.",
       "If I don’t wield the sword, I can’t protect you. If I keep wielding the sword, I can’t embrace you."
-    ]
+    ],
+    genres: "Action Supernatural Adventure Fantasy"
   },
   {
     name: "Tokyo Revengers",
@@ -132,7 +140,8 @@ var mangaList = [
       "It’s not how you start. It’s how you end.",
       "You don’t need to bow your head. Just have a heart that cares.",
       "No matter how hard things get, only the strong can move forward."
-    ]
+    ],
+    genres: "Action Drama Time Travel Crime"
   },
   {
     name: "Black Clover",
@@ -147,17 +156,24 @@ var mangaList = [
       "Surpass your limits. Right here. Right now.",
       "If you don’t give up, you’ll get through.",
       "Magic is not everything."
-    ]
+    ],
+    genres: "Action Adventure Fantasy Magic"
   }
 ];
+;
 
 
   mangaList.map(function(element){
     $('.content').append( `<div
              id=${element.name.replace(" ","_")} >
-             <div class="manga" style="display:inline-block"> <img  class="manga" src=${element.src}
+             <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
                 <p></p>Chapter: ${element.chapter}</p></div>
+                <div class="quotes" style="display:inline-block;width: 200px; height: 300px;"><h2 style="padding: 10px" >Genra:</h2>
+                <p style="padding: 10px" >${element.genres}</p>
+                <h2 style="padding: 10px" >Quotes:</h2>
+                <p style="padding: 10px"   >${element.quotes[Math.floor(Math.random()*4)]}</p>
+                </div>
                   <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
