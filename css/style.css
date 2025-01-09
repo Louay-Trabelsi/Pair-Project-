@@ -8,12 +8,12 @@ body {
 
 header#mainheader {
     background-color: #fff;
-    height: 50px;
     border-bottom: 1px solid #ddd;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 header#mainheader img#logo {
