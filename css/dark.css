@@ -60,7 +60,7 @@ header#mainheader div {
 
 header#mainheader button#loginlink,
 header#mainheader button#registerlink,
-header#mainheader button#logoutlink{
+header#mainheader button#logout{
     padding: 5px 10px;
     background-color: #007bff;
     color: #fff;
@@ -71,7 +71,8 @@ header#mainheader button#logoutlink{
 }
 
 header#mainheader button#loginlink:hover,
-header#mainheader button#registerlink:hover {
+header#mainheader button#registerlink:hover,
+header#mainheader button#logoutlink:hover {
     background-color: #0069d9;
 }
 
@@ -81,7 +82,7 @@ main.mainpage {
 
 main.mainpage .content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: auto auto auto auto auto;
     gap: 20px;
 }
 
@@ -95,7 +96,7 @@ main.mainpage .content div {
 }
 
 main.mainpage .content img.manga {
-    width: 400px;
+    width: 350px;
     height: 500px;
 }
 

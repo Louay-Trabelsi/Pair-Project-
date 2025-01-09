@@ -322,15 +322,15 @@ var users = [
 function enableImageHoverEffect() {
   $('.manga').hover(
       function () {
-          const parentDivId = $(this).closest('.eachmanga').attr('id');
-          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var parentDivId = $(this).closest('.eachmanga').attr('id');
+          var mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
 
           if (mangaItem) {
-              let index = 0;
-              const imageElement = $(this);
+              var index = 0;
+              var imageElement = $(this);
 
               // Start changing the image every 0.5 seconds
-              const intervalId = setInterval(function ()  {
+              var intervalId = setInterval(function ()  {
                   index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
                   imageElement.attr('src', mangaItem.imageGallery[index]);
               }, 1000);
@@ -344,8 +344,8 @@ function enableImageHoverEffect() {
           clearInterval($(this).data('intervalId'));
 
           // Reset the image back to the main one
-          const parentDivId = $(this).closest('.eachmanga').attr('id');
-          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var parentDivId = $(this).closest('.eachmanga').attr('id');
+          var mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
           if (mangaItem) {
               $(this).attr('src', mangaItem.src);
           }

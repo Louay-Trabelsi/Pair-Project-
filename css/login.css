@@ -43,7 +43,8 @@ header#mainheader div {
     gap: 10px;
 }
 
-header#mainheader button#loginlink {
+header#mainheader button#loginlink,
+header#mainheader button#logout{
     padding: 5px 10px;
     background-color: #007bff;
     color: #fff;
