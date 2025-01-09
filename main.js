@@ -58,9 +58,6 @@ var mangaList = [
     $('.content').append( `<div
              id=${element.name.replace(" ","_")}>
               <img  class="manga" src=${element.src}
-                alt=${(element.name).replace(" ","_")}>
-                  <h2>${element.name}</h2>
-
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
                   <h2 style="padding:10px" >${element.name} </h2>
                
