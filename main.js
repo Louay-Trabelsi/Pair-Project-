@@ -3,7 +3,7 @@ var mangaList = [
     {
       name: "One Piece",
       chapter: 1095,
-      src: "https://upload.wikimedia.org/wikipedia/en/3/3c/One_Piece_Logo.png"
+      src: "./resources/onepiece.jpg"
     },
     {
       name: "Naruto",
@@ -13,32 +13,32 @@ var mangaList = [
     {
       name: "Attack on Titan",
       chapter: 139,
-      src: "https://upload.wikimedia.org/wikipedia/en/4/4a/Attack_on_Titan_vol1_cover.jpg"
+      src: "./resources/Attack_on_Titan.jpg"
     },
     {
       name: "My Hero Academia",
       chapter: 401,
-      src: "https://upload.wikimedia.org/wikipedia/en/0/03/My_Hero_Academia_Volume_1_cover.jpg"
+      src: "./resources/My_Hero_Academia.webp"
     },
     {
       name: "Demon Slayer",
       chapter: 205,
-      src: "https://upload.wikimedia.org/wikipedia/en/1/1b/Demon_Slayer_-_Kimetsu_no_Yaiba%2C_volume_1.jpg"
+      src: "./resources/Demon_Slayer.jpg"
     },
     {
       name: "Jujutsu Kaisen",
       chapter: 240,
-      src: "https://upload.wikimedia.org/wikipedia/en/2/2d/Jujutsu_Kaisen_vol_1.png"
+      src: "./resources/Jujutsu_Kaisen.jpg"
     },
     {
       name: "Chainsaw Man",
       chapter: 143,
-      src: "https://upload.wikimedia.org/wikipedia/en/a/a8/Chainsaw_Man_vol_1.png"
+      src: "./resources/Chainsaw_Man.jpg"
     },
     {
       name: "Bleach",
       chapter: 686,
-      src: "https://upload.wikimedia.org/wikipedia/en/7/72/Bleach_cover_01.jpg"
+      src: "./resources/Bleach.png"
 
     },
     {
@@ -57,8 +57,8 @@ var mangaList = [
     $('.content').append( `<div
              id=${element.name.replace(" ","_")}>
               <img  class="manga" src=${element.src}
-                alt=${(element.name).replace(" ","_")}>
-                  <h2>${element.name}</h2>
+                alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
+                  <h2 style="padding:10px" >${element.name} </h2>
                
                   </div>`) 
   })
