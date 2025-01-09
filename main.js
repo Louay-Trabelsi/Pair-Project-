@@ -6,7 +6,7 @@ var mangaList = [
     imageGallery: [
       "./resources/onepiece1.jpg",
       "./resources/onepiece2.jpg",
-      "./resources/onepiece3.jpg"
+      "./resources/onepiece3.jpg",
     ],
     quotes: [
       "When do you think people die? When they are shot with a bullet? No. When they eat a soup made from a poisonous mushroom? No. They die... when they are forgotten!",
