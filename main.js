@@ -219,11 +219,11 @@ function Makeuser(name,Password){
   return obj
 }
 var users = [
-    Makeuser(  "JohnDoe",  "password123" ),
-    Makeuser(  "JaneSmith",  "12345abc" ),
-    Makeuser(  "MangaLover",  "onepiece4life" ),
-    Makeuser(  "AnimeFan99",  "naruto2023" ),
-    Makeuser(  "DarkKnight",  "batman123" ),
+    Makeuser( "JohnDoe",  "password123" ),
+    Makeuser( "JaneSmith",  "12345abc" ),
+    Makeuser( "MangaLover",  "onepiece4life" ),
+    Makeuser( "AnimeFan99",  "naruto2023" ),
+    Makeuser( "DarkKnight",  "batman123" ),
     Makeuser(  "LightYagami",  "kiraRules" ),
     Makeuser(  "LeviAckerman",  "surveyCorp" ),
     Makeuser(  "ItachiUchiha",  "sharingan007" ),
@@ -232,10 +232,6 @@ var users = [
     Makeuser( "Abdou","mypass123"),
     Makeuser("Louay","manga789"),
   ]
-  console.log(users);
-  
-  
-  
  //register section
   $('#register').on('click',function(){
    users.push(Makeuser($('#new-username').val(),$('#new-password').val()))
@@ -287,9 +283,9 @@ var users = [
   //naruto main
   
   mangaList.each(function(element){
-    $('narutomain.narutogallery').fadeOut(500)
-    $('narutomain.narutogallery').attr("src")=element.imageGallery
-    $('narutomain.narutogallery').fadeIn(500)
+    $('.narutogallery').fadeOut(500)
+    $(".narutogallery").attr("src",element.imageGallery[0])
+    $('.narutogallery').fadeIn(500)
   })
   
   
