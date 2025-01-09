@@ -1,4 +1,5 @@
-
+$('#logo').width("200px")
+$("#logo").height("100px")
 
 var mangaList = [
   {
@@ -282,3 +283,13 @@ var users = [
       ($("#mode").attr("href","./css/register.css"))
     }
   })
+
+  //naruto main
+  
+  mangaList.each(function(element){
+    $('narutomain.narutogallery').fadeOut(500)
+    $('narutomain.narutogallery').attr("src")=element.imageGallery
+    $('narutomain.narutogallery').fadeIn(500)
+  })
+  
+  
