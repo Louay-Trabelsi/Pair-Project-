@@ -4,42 +4,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./resources/icon.png" />
+  <link rel="icon" href="./resources/logo.jpg" />
   <link rel="stylesheet" href="/css/register.css" />
   <title>login</title>
 </head>
 
-<body>
-  <header>
-    <header>
-      <img src="" alt="">
-      <h2 id="homebtn">Home</h2>
-      <div id="search">
-        <input id="searchplace" type="text" placeholder="search for a manga">
-        <button type="submit" id="searchbtn">search</button>
-      </div>
-    </header>
+  <body>
+      <header id="mainheader">
+        <img src="./resources/logo.jpg" alt="ALmanga" id="logo " />
+       
+        <div id="search">
+            <input id="searchplace" type="text" placeholder="search for a manga">
+            <button type="submit" id="searchbtn">search</button>
+        </div>
+        <div>
+          <button id="loginlink">Login</button>
+          <button id="registerlink">Register</button>
+      </div>  
+        <button id="togglemode">togglemode</button>
+    
+        </header>
 
-
-  </header>
-  <main>
+    
+    <main>
       <div>
         <h1>Enter Your username:/></h1>
         <input id="new-username" type="text" pattern="[A-Za-z]{4,}" required>
 
-        <h1 >Create a New Password:</h1>
-        <input id="new-password"  type="password" pattern="[a-z0-5]{8,}" required />
+        <h1>Create a New Password:</h1>
+        <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required />
       </div>
       <button type="submit" id="register">register</button>
-  </main>
-  <footer>
+    </main>
+      </footer>
 
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="main.js"></script>
 
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="main.js"></script>
-
-</body>
+  </body>
 
 </html>

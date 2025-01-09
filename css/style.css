@@ -1,5 +1,3 @@
-/* Light Mode CSS */
-
 body {
     background-color: #f9f9f9;
     color: #333;
@@ -10,11 +8,18 @@ body {
 
 header#mainheader {
     background-color: #fff;
+    height: 50px;
     border-bottom: 1px solid #ddd;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header#mainheader img#logo {
+    width: 200px;
+    height: 50px;
+    
 }
 
 header#mainheader h2 {
@@ -59,6 +64,7 @@ header#mainheader button#loginlink:hover,
 header#mainheader button#registerlink:hover {
     background-color: #0069d9;
 }
+
 
 main.mainpage {
     padding: 20px;

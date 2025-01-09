@@ -161,3 +161,4 @@ var users = [
       ($("#mode").attr("href","/css/style.css"))
     }
   })
+

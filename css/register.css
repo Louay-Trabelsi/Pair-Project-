@@ -1,4 +1,4 @@
-/* Light Mode CSS for register.html */
+/* Light Mode CSS */
 
 body {
     background-color: #f9f9f9;
@@ -10,11 +10,18 @@ body {
 
 header#mainheader {
     background-color: #fff;
+    height: 50px;
     border-bottom: 1px solid #ddd;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header#mainheader img#logo {
+    width: 200px;
+    height: 50px;
+    
 }
 
 header#mainheader h2 {
@@ -45,20 +52,38 @@ header#mainheader div {
     gap: 10px;
 }
 
+header#mainheader button#loginlink,
+header#mainheader button#registerlink {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+header#mainheader button#loginlink:hover,
+header#mainheader button#registerlink:hover {
+    background-color: #0069d9;
+}
+
 main {
     padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: 81vh;
 }
 
 main div {
     background-color: #fff;
-    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    width: fit-content;
 }
 
 main div h1 {
@@ -68,16 +93,18 @@ main div h1 {
 
 main input[type="text"],
 main input[type="password"] {
-    width: 100%;
-    padding: 10px;
+    text-align: center;
+    width: 250px;
+    padding: 12px 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
 main button#register {
+    width: fit-content;
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #363836;
     color: #fff;
     border: none;
     border-radius: 3px;
