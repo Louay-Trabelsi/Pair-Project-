@@ -7,11 +7,10 @@ header{
     font-family: Tahoma;
     font-size: 16px;
   }
-  #logo{
+i{
    
-    width: 500px;
-    height: 80px;
-    margin: 0 ;
+    width: 200px;
+
     display: block;
   }
 
