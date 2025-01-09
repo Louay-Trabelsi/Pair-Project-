@@ -58,9 +58,6 @@ var mangaList = [
     $('.content').append( `<div
              id=${element.name.replace(" ","_")}>
               <img  class="manga" src=${element.src}
-                alt=${(element.name).replace(" ","_")}>
-                  <h2>${element.name}</h2>
-
                 alt=${(element.name).replace(" ","_")} style="width: 200px; height: 300px;padding: 10px;">
                   <h2 style="padding:10px" >${element.name} </h2>
                
@@ -156,11 +153,11 @@ var users = [
   $('#togglemode').on('click', function(){ 
     console.log($("#mode").attr("href"));
     
-    if($("#mode").attr("href")==="/css/style.css"){
-      $("#mode").attr("href","/css/darkcss.css")
+    if($("#mode").attr("href")==="./css/style.css"){
+      $("#mode").attr("href","./css/darkcss.css")
     }  
-    else if( $("#mode").attr("href")==="/css/darkcss.css"){
-      ($("#mode").attr("href","/css/style.css"))
+    else if( $("#mode").attr("href")==="./css/darkcss.css"){
+      ($("#mode").attr("href","./css/style.css"))
     }
   })
 
