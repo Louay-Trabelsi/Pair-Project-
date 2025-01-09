@@ -168,7 +168,7 @@ localStorage.setItem("mangalist",JSON.stringify(mangaList))
   mangaList.map(function(element){
     $('.content').append( `<div class="eachmanga"
              id=${element.name.replace(" ","_")} >
-             <div class="mangaa" style="display:inline-block; "> <img  class="manga" src=${element.src}
+             <div class="mangaa" > <img  class="manga" src=${element.src}
                 alt=${(element.name).replace(" ","_")} >
                 <p></p>Chapter: ${element.chapter}</p></div>
                 <div class="quotes">
@@ -275,12 +275,10 @@ var users = [
     }
   })
 
+  
 
 
   // when logged in
-
-
-
 
   if(localStorage.getItem("login",$("#username").val())==undefined){
     $("#loginlink").html("Login") 
@@ -288,11 +286,12 @@ var users = [
     $(".Bookmark").on("click",function(){
       $(this)
     })
-
-
+    $('#logoutlink').hide()
 }
   else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
+  //logout
+  
 
   //toggle light and Dark mode
   $('#togglemode').on('click', function(){ 
@@ -324,15 +323,15 @@ var users = [
 function enableImageHoverEffect() {
   $('.manga').hover(
       function () {
-          const parentDivId = $(this).closest('.eachmanga').attr('id');
-          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var  parentDivId = $(this).closest('.eachmanga').attr('id');
+          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
 
           if (mangaItem) {
-              let index = 0;
-              const imageElement = $(this);
+              var  index = 0;
+              var  imageElement = $(this);
 
               // Start changing the image every 0.5 seconds
-              const intervalId = setInterval(function ()  {
+              var  intervalId = setInterval(function ()  {
                   index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
                   imageElement.attr('src', mangaItem.imageGallery[index]);
               }, 1000);
@@ -346,8 +345,8 @@ function enableImageHoverEffect() {
           clearInterval($(this).data('intervalId'));
 
           // Reset the image back to the main one
-          const parentDivId = $(this).closest('.eachmanga').attr('id');
-          const mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+          var  parentDivId = $(this).closest('.eachmanga').attr('id');
+          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
           if (mangaItem) {
               $(this).attr('src', mangaItem.src);
           }
@@ -357,6 +356,25 @@ function enableImageHoverEffect() {
 
 // Call the function after appending manga elements
 enableImageHoverEffect();
+
+
+function login() {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let users = JSON.parse(localStorage.getItem("user"));
+  let user = users.find((user) => user.username === username && user.password === password);
+  if (user) {
+    localStorage.setItem("login", username);
+    location.replace("index.html");
+  } else {
+    alert("Invalid username or password");
+  }
+} ;
+
+function logout() {
+  localStorage.removeItem("login");
+  location.replace("index.html");
+}
 
 
   

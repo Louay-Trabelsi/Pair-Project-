@@ -75,6 +75,7 @@ main.mainpage .content {
     grid-template-columns: auto auto auto;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between;
    
 }
 
@@ -87,6 +88,7 @@ main.mainpage .content div {
     padding: 10px;
     margin: auto;
     height: 500px;
+
 }
 .mangainfoholedr{
    
@@ -135,7 +137,7 @@ main.mainpage .content div {
 }
 
 main.mainpage .content img.manga {
-    width: 100%;
+    width: 300PX;
     height: auto;
     cursor: pointer;
 }
