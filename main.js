@@ -288,8 +288,6 @@ var users = [
     $(".Bookmark").on("click",function(){
       $(this)
     })
-
-
 }
   else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
