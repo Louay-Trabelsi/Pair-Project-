@@ -174,7 +174,7 @@ var mangaList = [
                 <p style="padding: 10px" >${element.genres}</p>
                 <h2 id="quotes" >Quotes:</h2>
                 <p id="mangaquotes"  >${element.quotes[Math.floor(Math.random()*3)]}</p>
-                <input type="button" value="Bookmark" id="bookmark" >
+                <input type="button" value="Bookmark" id=${(element.name).replace(" ","_")} class="bookmark">
                 </div>
                   
                

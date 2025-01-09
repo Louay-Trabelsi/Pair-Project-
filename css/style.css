@@ -119,9 +119,11 @@ main.mainpage .content div {
     margin: 0;
     background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
-#bookmark{
-    
-    margin: 0;
+.bookmark{
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+    align-items: center;
     background-color: rgba(rgb(77, 71, 71), rgb(77, 71, 71), rgb(77, 71, 71), 0.6);
 }
 
