@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./resources/icon.png" />
+    <link id="mode" rel="stylesheet" href="./css/light.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>login</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./resources/icon.png" />
-  <link id="mode" rel="stylesheet" href="./css/light.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>login</title>
-</head>
-
-<body>
-  <header>
-    <header id="mainheader">
-        <img src="./resources/logo.jpg" alt="ALmanga" id="logo"  />   
+  <body>
+    <header>
+      <header id="mainheader">
+        <img src="./resources/logo.jpg" alt="ALmanga" id="logo" />
         <div id="search">
-            <input id="searchplace" type="text" placeholder="search for a manga">
-            <button type="submit" id="searchbtn">🔎</button>
-             
+          <input
+            id="searchplace"
+            type="text"
+            placeholder="search for a manga"
+          />
+          <button type="submit" id="searchbtn">🔎</button>
         </div>
-         <div class="login">
-                <button id="loginlink">Login</button>
-                <button id="registerlink">Register</button>
-            </div> 
+        <div class="login">
+          <button id="loginlink">Login</button>
+          <button id="registerlink">Register</button>
+        </div>
         <button id="togglemode">Light/dark</button>
-    
-        </header>
-
-
-  </header>
-  <main id="login-main">
+      </header>
+    </header>
+    <main id="login-main">
       <div id="login-form">
         <div class="login-username">
           <span>username*</span>
-          <input id="username" type="text" pattern="[A-Za-z]{4,}" placeholder="username" required>
+          <input
+            id="username"
+            type="text"
+            pattern="[A-Za-z]{4,}"
+            placeholder="username"
+            required
+          />
         </div>
-      <div class="login-password">
-        <span >Password*</span>
-        <input id="npassword"  type="password" pattern="[a-z0-5]{8,}" placeholder="password" required />
-      </div>
+        <div class="login-password">
+          <span>Password*</span>
+          <input
+            id="npassword"
+            type="password"
+            pattern="[a-z0-5]{8,}"
+            placeholder="password"
+            required
+          />
+        </div>
         <button type="submit" id="login" onclick="login()">login</button>
-        <a href="./registerindex.html">Register Here if you don't  have an account !</a>
+        <a href="./registerindex.html"
+          >Register Here if you don't have an account !</a
+        >
       </div>
-      
-  </main>
-  <div id="footer"></div>
+    </main>
+    <div id="footer"></div>
 
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="main.js"></script>
-
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

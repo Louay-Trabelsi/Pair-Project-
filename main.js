@@ -302,7 +302,6 @@ if (localStorage.getItem("login") === null) {
   $(".Bookmark").show();
 }
 
-
 //toggle light and Dark mode
 $("#togglemode").on("click", function () {
   if ($("#mode").attr("href") === "./css/light.css") {
@@ -428,7 +427,6 @@ $(".Bookmark").on("click", function () {
 
   localStorage.setItem("user", JSON.stringify(users));
 });
-
 
 // footer
 $(document).ready(function () {

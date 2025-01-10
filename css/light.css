@@ -46,27 +46,26 @@ header#mainheader h1 {
 }
 
 #searchbtn {
-    display: inline-block;
-    background-color: #2196F3;  /* Blue background */
-    color: white;
-    font-size: 14px;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  #searchbtn:hover {
-    background-color: #0b7dda;  /* Darker blue on hover */
-    transform: scale(1.05);  /* Slightly enlarge the button */
-  }
-  
-  #searchbtn:active {
-    background-color: #0a6bbf;  /* Even darker blue when clicked */
-  }
-  
+  display: inline-block;
+  background-color: #2196f3; /* Blue background */
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#searchbtn:hover {
+  background-color: #0b7dda; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+#searchbtn:active {
+  background-color: #0a6bbf; /* Even darker blue when clicked */
+}
 
 header#mainheader div {
   display: flex;
@@ -75,27 +74,26 @@ header#mainheader div {
 
 header#mainheader button#loginlink,
 header#mainheader button#registerlink {
-    display: inline-block;
-    background-color: #4CAF50;  /* Green background */
-    color: white;
-    font-size: 14px;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
+  display: inline-block;
+  background-color: #4caf50; /* Green background */
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
 header#mainheader button#loginlink:hover,
 header#mainheader button#registerlink:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+  background-color: #45a049;
+  transform: scale(1.05);
 }
 header#mainheader button#loginlink:active,
 header#mainheader button#registerlink:active {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 main.mainpage {
@@ -365,19 +363,18 @@ footer {
 }
 
 #logoutlink {
-    display: inline-block;
-    background-color: #ff4d4d;  /* Red background */
-    color: white;
-    font-size: 14px;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #logoutlink:hover {
-    background-color: #ff1a1a;  /* Darker red on hover */
-  }
-  
+  display: inline-block;
+  background-color: #ff4d4d; /* Red background */
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#logoutlink:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
