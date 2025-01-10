@@ -429,6 +429,7 @@ $(".Bookmark").on("click", function () {
   localStorage.setItem("user", JSON.stringify(users));
 });
 
+
 // footer
 $(document).ready(function () {
   var footer = `
