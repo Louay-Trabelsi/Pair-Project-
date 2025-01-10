@@ -6,202 +6,236 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-header#mainheader {
+  }
+  
+  header#mainheader {
     background-color: #1f1f1f;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #444;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
-}
-
-header#mainheader img#logo {
+  }
+  
+  header#mainheader img#logo {
     width: 300px;
     margin: auto 20px;
     height: auto;
     cursor: pointer;
     border-radius: 12px;
-}
-
-header#mainheader h1 {
+  }
+  
+  header#mainheader h1 {
     cursor: pointer;
     color: #e0e0e0;
-}
-
-#search {
+  }
+  
+  #search {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 700px;
-}
-
-#searchplace {
+  }
+  
+  #searchplace {
     border-radius: 25px;
     width: 80%;
     height: 30px;
     border-radius: 10px;
-    border: 1px solid #444;
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-}
-
-header#mainheader button#searchbtn {
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
+    border: 1px solid #666;
+    background-color: #333;
+    color: white;
+  }
+  
+  #searchbtn {
+    display: inline-block;
+    background-color: #2196F3;  /* Blue background */
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-header#mainheader button#searchbtn:hover {
-    background-color: #45a049;
-}
-
-header#mainheader div {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #searchbtn:hover {
+    background-color: #0b7dda;  /* Darker blue on hover */
+    transform: scale(1.05);  /* Slightly enlarge the button */
+  }
+  
+  #searchbtn:active {
+    background-color: #0a6bbf;  /* Even darker blue when clicked */
+  }
+  
+  header#mainheader div {
     display: flex;
     gap: 10px;
-}
-
-header#mainheader button#loginlink,
-header#mainheader button#registerlink {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
+  }
+  
+  header#mainheader button#loginlink,
+  header#mainheader button#registerlink {
+    display: inline-block;
+    background-color: #4CAF50;  /* Green background */
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-header#mainheader button#loginlink:hover,
-header#mainheader button#registerlink:hover {
-    background-color: #0069d9;
-}
-
-main.mainpage {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  header#mainheader button#loginlink:hover,
+  header#mainheader button#registerlink:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  header#mainheader button#loginlink:active,
+  header#mainheader button#registerlink:active {
+    background-color: #3e8e41;
+  }
+  
+  main.mainpage {
     padding: 20px;
-}
-
-main.mainpage .content {
+    background-color: #181818;
+  }
+  
+  main.mainpage .content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
     justify-content: space-between;
-}
-
-main.mainpage .content div, #register-form, #login-form {
+  }
+  
+  main.mainpage .content div,
+  #register-form,
+  #login-form {
     background-color: #1f1f1f;
-    border: 1px solid #333;
-    border-radius: 3px;
+    border: 1px solid #444;
+    border-radius: 12px;
     align-items: center;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, border-color 0.3s ease;
     padding: 10px;
-    border-radius: 12px;
-}
-
-#register-form, #login-form {
+  }
+  
+  #register-form,
+  #login-form {
     width: 40%;
     height: 30vh;
     text-align: center;
     display: flex;
     flex-direction: column;
-}
-
-#login-form span, #register-form span {
+  }
+  
+  #login-form span,
+  #register-form span {
     text-align: left;
     font-weight: bold;
     padding: 12px;
-    color: #e0e0e0;
-}
-
-.login-username, .login-password {
+  }
+  
+  .login-username,
+  .login-password {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.eachmanga {
-    padding: 10px;   
-    align-items: center;
-}
-
-#login-form button, #register-form button {
+  }
+  
+  #login-form button,
+  #register-form button {
     cursor: pointer;
     margin: 12px;
     padding: 8px;
     width: 30%;
     border-radius: 12px;
-    background-color: #444;
-    color: #fff;
+    background-color: black;
+    color: white;
     border: none;
     transition: 0.3s;
-}
-
-#login-form button:hover, #register-form button:hover {
-    color: #444;
-    background-color: #fff;
-    border: 1px solid #444;
-}
-
-.Bookmark {
+  }
+  
+  #login-form button:hover,
+  #register-form button:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+  }
+  
+  .Bookmark {
     bottom: 0;
     cursor: pointer;
     padding: 8px;
     width: 30%;
     border-radius: 12px;
-    background-color: #444;
-    color: #fff;
+    background-color: black;
+    color: white;
     border: none;
     transition: 0.3s;
-}
-
-#register-form input, #login-form input {
+  }
+  
+  #register-form input,
+  #login-form input {
     padding: 5px;
     margin: 5px;
     border-radius: 3px;
-    border: 1px solid #444;
+    border: 1px solid #666;
     width: 80%;
     height: 30px;
-    border-radius: 12px;
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-}
-
-#register-main, #login-main {
+    background-color: #333;
+    color: white;
+  }
+  
+  #register-main,
+  #login-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 70px auto;    
-}
-
-main.mainpage .content img.manga {
+    margin: 70px auto;
+  }
+  
+  main.mainpage .content img.manga {
     width: 100%;
     height: 500px;
-}
-
-.mangaa, .quotes {
+  }
+  
+  .mangaa,
+  .quotes {
     margin: 12px;
     padding: 10px;
-    color: #e0e0e0;
-}
-
-main.mainpage .content h1 {
+  }
+  
+  main.mainpage .content h1 {
     padding: 10px;
     font-size: 1.2em;
     text-align: center;
     background-color: #333;
     margin: 0;
     color: #e0e0e0;
-}
-#togglemode {
+  }
+  
+  footer {
+    background-color: #1f1f1f;
+    border-top: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, border-top 0.3s ease;
+  }
+  
+  footer p {
+    margin: 0;
+    color: #999;
+  }
+  
+  /* Toggle Button Styling */
+  #togglemode {
     top: 20px;
     right: 20px;
     padding: 10px 20px;
@@ -214,18 +248,18 @@ main.mainpage .content h1 {
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#togglemode:hover {
+  }
+  
+  #togglemode:hover {
     background-color: #0056b3;
     transform: scale(1.1);
-}
-
-#togglemode:active {
+  }
+  
+  #togglemode:active {
     background-color: #003f7f;
-}
-
-footer{
+  }
+  
+  footer {
     background: #111;
     height: auto;
     width: 100%;
@@ -233,105 +267,122 @@ footer{
     color: #fff;
     margin: 0;
     padding: 0;
-}
-.footer-content{
+  }
+  
+  .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-}
-.footer-content h3{
+  }
+  
+  .footer-content h3 {
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: capitalize;
     line-height: 3rem;
-}
-.footer-content p{
+  }
+  
+  .footer-content p {
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
     color: #cacdd2;
-}
-.socials{
+  }
+  
+  .socials {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
-}
-.socials li{
+  }
+  
+  .socials li {
     margin: 0 10px;
-}
-.socials a{
+  }
+  
+  .socials a {
     text-decoration: none;
     color: #fff;
     border: 1.1px solid white;
     padding: 5px;
-
     border-radius: 50%;
-
-}
-.socials a i{
+  }
+  
+  .socials a i {
     font-size: 1.1rem;
     width: 20px;
-
-
-    transition: color .4s ease;
-
-}
-.socials a:hover i{
+    transition: color 0.4s ease;
+  }
+  
+  .socials a:hover i {
     color: aqua;
-}
-
-.footer-bottom{
+  }
+  
+  .footer-bottom {
     background: #000;
     width: 100%;
     padding: 0;
     margin: 0;
     padding-bottom: 40px;
     text-align: center;
-}
-.footer-bottom p{
-float: left;
+  }
+  
+  .footer-bottom p {
+    float: left;
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
-}
-.footer-bottom p a{
-  color:#44bae8;
-  font-size: 16px;
-  text-decoration: none;
-}
-.footer-bottom span{
+  }
+  
+  .footer-bottom p a {
+    color: #44bae8;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .footer-bottom span {
     text-transform: uppercase;
-    opacity: .4;
+    opacity: 0.4;
     font-weight: 200;
-}
-.footer-menu{
-  float: right;
-
-}
-.footer-menu ul{
-  display: flex;
-}
-.footer-menu ul li{
-padding-right: 10px;
-display: block;
-}
-.footer-menu ul li a{
-  color: #cfd2d6;
-  text-decoration: none;
-}
-.footer-menu ul li a:hover{
-  color: #27bcda;
-}
-
-@media (max-width:500px) {
-.footer-menu ul{
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-}
+  }
+  
+  .footer-menu {
+    float: right;
+  }
+  
+  .footer-menu ul {
+    display: flex;
+  }
+  
+  .footer-menu ul li {
+    padding-right: 10px;
+    display: block;
+  }
+  
+  .footer-menu ul li a {
+    color: #cfd2d6;
+    text-decoration: none;
+  }
+  
+  .footer-menu ul li a:hover {
+    color: #27bcda;
+  }
+  
+  @media (max-width: 500px) {
+    .footer-menu ul {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  #logoutlink {
+    display: inline-block;
+    background-color: #ff4d4d;  /* Red background */
+    color: white;
+    font-size: 
+  
