@@ -288,6 +288,8 @@ $("#login").on("click", function () {
   }
 });
 
+//logout section
+
 // when logged in
 
 if (localStorage.getItem("login") === null) {
