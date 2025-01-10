@@ -300,7 +300,6 @@ if (localStorage.getItem("login") === null) {
   $(".Bookmark").show();
 }
 
-//lo
 
 //toggle light and Dark mode
 $("#togglemode").on("click", function () {
@@ -324,37 +323,32 @@ $("#togglemode").on("click", function () {
 //
 
 // Function to change image on hover
-
 function enableImageHoverEffect() {
   $(".manga").hover(
     function () {
-      var parentDivId = $(this).closest(".eachmanga").attr("id");
+      var parentDivName = $(this).closest(".eachmanga").attr("name");
       var mangaItem = mangaList.find(function (item) {
-        return item.name.replace(" ", "_") === parentDivId;
+        return item.name === parentDivName;
       });
 
       if (mangaItem) {
         var index = 0;
         var imageElement = $(this);
 
-        // Start changing the image every 0.5 seconds
         var intervalId = setInterval(function () {
-          index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
+          index = (index + 1) % mangaItem.imageGallery.length;
           imageElement.attr("src", mangaItem.imageGallery[index]);
         }, 1000);
 
-        // Store the interval ID in the element's data
         $(this).data("intervalId", intervalId);
       }
     },
     function () {
-      // Stop changing the image when the hover ends
       clearInterval($(this).data("intervalId"));
 
-      // Reset the image back to the main one
-      var parentDivId = $(this).closest(".eachmanga").attr("id");
+      var parentDivName = $(this).closest(".eachmanga").attr("name");
       var mangaItem = mangaList.find(function (item) {
-        return item.name.replace(" ", "_") === parentDivId;
+        return item.name === parentDivName;
       });
 
       if (mangaItem) {
