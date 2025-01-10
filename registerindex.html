@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./resources/icon.png" />
-  <link id="mode" rel="stylesheet" href="./css/register.css" />
+  <link id="mode" rel="stylesheet" href="./css/light.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>register</title>
 </head>
 
@@ -21,25 +22,30 @@
           <button id="loginlink">Login</button>
           <button id="registerlink">Register</button>
       </div>  
-        <button id="togglemode">togglemode</button>
+        <button id="togglemode">Light/dark</button>
     
         </header>
 
     
-    <main>
-      <div>
-        <h1>Enter Your username></h1>
-        <input id="new-username" type="text" pattern="[A-Za-z]{4,}" required>
-
-        <h1>Create a New Password:</h1>
-        <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required />
+    <main id="register-main">      
+      <div id="register-form">
+        <div class="login-username">
+          <span>New Username*</span>
+          <input id="new-username" type="text" pattern="[A-Za-z]{4,}" placeholder="username" required>
+        </div>
+      <div class="login-password">
+        <span >New Password*</span>
+        <input id="new-password"  type="password" pattern="[a-z0-5]{8,}" placeholder="password" required />
       </div>
-      <button type="submit" id="register">register</button>
+        <button type="submit" id="register" onclick="login()">Register</button>
+        <a href="./login.html">Login Here if you have an account !</a>
+      </div>
     </main>
-      </footer>
+<div id="footer"></div>
 
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script src="main.js"></script>
+
 
   </body>
 

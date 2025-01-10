@@ -1,38 +1,41 @@
 // this is our manga list
 var mangaList = [
   {
+    id: 1,
     name: "One Piece",
     chapter: 1095,
     src: "./resources/onepiece.jpg",
     imageGallery: [
       "./resources/onepiece1.jpg",
       "./resources/onepiece2.jpg",
-      "./resources/onepiece3.jpg"
+      "./resources/onepiece3.jpg",
     ],
     quotes: [
-      "When do you think people die? When they are shot with a bullet? No. When they eat a soup made from a poisonous mushroom? No. They die... when they are forgotten!",
+      "When do you think people die? When they are shot with a bullet ? No. When they eat a soup made from a poisonous mushroom? No. They die... when they are forgotten!",
       "Power isn't determined by your size, but the size of your heart and dreams!",
       "I'm going to become the Pirate King!",
     ],
-    genres: "Adventure Action Fantasy Comedy"
+    genres: "Adventure Action Fantasy Comedy",
   },
   {
+    id: 2,
     name: "Naruto",
     chapter: 700,
     src: "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
     imageGallery: [
       "./resources/naruto1.jpg",
       "./resources/naruto2.jpg",
-      "./resources/naruto3.jpg"
+      "./resources/naruto3.jpg",
     ],
     quotes: [
       "Hard work is worthless for those that don’t believe in themselves.",
       "When a man learns to love, he must bear the risk of hatred.",
       "I never go back on my word. That is my ninja way!",
     ],
-    genres: "Adventure Action Martial Arts Fantasy"
+    genres: "Adventure Action Martial Arts Fantasy",
   },
   {
+    id: 3,
     name: "Attack on Titan",
     chapter: 139,
     src: "./resources/Attack_on_Titan.jpg",
@@ -49,6 +52,7 @@ var mangaList = [
     genres: "Action Drama Dark Fantasy Tragedy",
   },
   {
+    id: 4,
     name: "My Hero Academia",
     chapter: 401,
     src: "./resources/My_Hero_Academia.webp",
@@ -65,6 +69,7 @@ var mangaList = [
     genres: "Action Superhero Comedy Fantasy",
   },
   {
+    id: 5,
     name: "Demon Slayer",
     chapter: 205,
     src: "./resources/Demon_Slayer.jpg",
@@ -81,6 +86,7 @@ var mangaList = [
     genres: "Action Dark Fantasy Supernatural Drama",
   },
   {
+    id: 6,
     name: "Jujutsu Kaisen",
     chapter: 240,
     src: "./resources/Jujutsu_Kaisen.jpg",
@@ -97,6 +103,7 @@ var mangaList = [
     genres: "Action Dark Fantasy Supernatural Drama",
   },
   {
+    id: 7,
     name: "Chainsaw Man",
     chapter: 143,
     src: "./resources/Chainsaw_Man.jpg",
@@ -113,6 +120,7 @@ var mangaList = [
     genres: "Action Dark Fantasy Horror Comedy",
   },
   {
+    id: 8,
     name: "Bleach",
     chapter: 686,
     src: "./resources/Bleach.png",
@@ -129,6 +137,7 @@ var mangaList = [
     genres: "Action Supernatural Adventure Fantasy",
   },
   {
+    id: 9,
     name: "Tokyo Revengers",
     chapter: 278,
     src: "./resources/Tokyo_Revengers.jpg",
@@ -145,6 +154,7 @@ var mangaList = [
     genres: "Action Drama Time Travel Crime",
   },
   {
+    id: 10,
     name: "Black Clover",
     chapter: 372,
     src: "./resources/Black_Clover.jpg",
@@ -161,224 +171,296 @@ var mangaList = [
     genres: "Action Adventure Fantasy Magic",
   },
 ];
-localStorage.setItem("mangalist",JSON.stringify(mangaList))
-
+localStorage.setItem("mangalist", JSON.stringify(mangaList));
 
 // add the images to the html
-  mangaList.map(function(element){
-    $('.content').append( `<div class="eachmanga"
-             id=${element.name.replace(" ","_")} >
+mangaList.map(function (element) {
+  $(".content").append(`<div class="eachmanga"
+             id=${element.name.replace(" ", "_")} >
              <div class="mangaa" > <img  class="manga" src=${element.src}
-                alt=${(element.name).replace(" ","_")} >
+                alt=${element.name.replace(" ", "_")} >
                 <p></p>Chapter: ${element.chapter}</p></div>
                 <div class="quotes">
                 <h2 >Genre</h2>
                 <p >${element.genres}</p>
                 <h2 >Quotes:</h2>
-                <p   >${element.quotes[Math.floor(Math.random()*element.quotes.length)]}</p>
+                <p   >${
+                  element.quotes[
+                    Math.floor(Math.random() * element.quotes.length)
+                  ]
+                }</p>
                 </div>
                   <h2 style="padding:10px" >${element.name} </h2>
+                  <button class="Bookmark">Bookmark</button>
                
-                  </div>`) 
-  })
-  $(".Bookmark").hide()
-    var input=$("#searchplace")    
-    var manga=$('.manga')
+                  </div>`);
+});
+$(".Bookmark").hide();
+var input = $("#searchplace");
+var manga = $(".manga");
 
-    //search with button 
-    $('#searchbtn').on("click", function () {
-      manga.each(function () {
-        var x=$(this)||manga
-      
-        
-        if (x.attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
-          $(this).parent().parent().show();
-        } else {
-          $(this).parent().parent().hide();
-        }
-      });
-    })
+//search with button
+$("#searchbtn").on("click", function () {
+  manga.each(function () {
+    var x = $(this) || manga;
+
+    if (x.attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
+      $(this).parent().parent().show();
+    } else {
+      $(this).parent().parent().hide();
+    }
+  });
+});
 
 // saerch with button enter (event.which===13)
 $("#searchplace").on("keypress", function (event) {
   if (event.which === 13) {
     console.log(input.val());
     manga.each(function () {
-        if ($(this).attr("alt").toLowerCase().includes(input.val().replace(" ","_").toLowerCase())) {
-          console.log($(this).attr("alt").toLowerCase());
-          
-          $(this).parent().parent().show();
-          
-        } else {
-          $(this).parent().parent().hide();
-          
-        }
-      })
-      input.val('')
-   }
-})
-// headr buttons 
-$('#registerlink').on('click',function(){
-    location.replace("registerindex.html")
-})
+      if (
+        $(this)
+          .attr("alt")
+          .toLowerCase()
+          .includes(input.val().replace(" ", "_").toLowerCase())
+      ) {
+        console.log($(this).attr("alt").toLowerCase());
+
+        $(this).parent().parent().show();
+      } else {
+        $(this).parent().parent().hide();
+      }
+    });
+    input.val("");
+  }
+});
+// headr buttons
+$("#registerlink").on("click", function () {
+  location.replace("registerindex.html");
+});
 
 $("#loginlink").on("click", function () {
   location.replace("login.html");
 });
 
-$('#homebtn').on('click',function(){
-    location.replace('index.html')
-})
-$('#logo').on('click',function(){
-  location.replace('index.html')
-})
+$("#homebtn").on("click", function () {
+  location.replace("index.html");
+});
+$("#logo").on("click", function () {
+  location.replace("index.html");
+});
 // creating users
-function Makeuser(name,Password){
-  var  obj={}
-      obj.username=name
-      obj.password=Password
-      obj.bookmark=""
-  return obj
+function Makeuser(name, Password) {
+  var obj = {};
+  obj.username = name;
+  obj.password = Password;
+  obj.bookmark = [];
+  return obj;
 }
 var users = [
-    Makeuser( "JohnDoe",  "password123" ),
-    Makeuser( "JaneSmith",  "12345abc" ),
-    Makeuser( "MangaLover",  "onepiece4life" ),
-    Makeuser( "AnimeFan99",  "naruto2023" ),
-    Makeuser( "DarkKnight",  "batman123" ),
-    Makeuser(  "LightYagami",  "kiraRules" ),
-    Makeuser(  "LeviAckerman",  "surveyCorp" ),
-    Makeuser(  "ItachiUchiha",  "sharingan007" ),
-    Makeuser(  "TanjiroKamado",  "nezukoForever" ),
-    Makeuser(  "SaitamaHero",  "onepunchMan" ),
-    Makeuser( "Abdou","mypass123"),
-    Makeuser("Louay","manga789"),
-  ]
-  localStorage.setItem("user",JSON.stringify(users)) 
- //register section
-  $('#register').on('click',function(){
-   users.push(Makeuser($('#new-username').val(),$('#new-password').val()))
-   localStorage.setItem("user",JSON.stringify(users))
-   console.log($('#username').val());
-   $('#username').val("")
-   $('#new-password').val("")
-  location.replace("index.html")
-  })
-
+  Makeuser("JohnDoe", "password123", []),
+  Makeuser("JaneSmith", "12345abc", []),
+  Makeuser("MangaLover", "onepiece4life", []),
+  Makeuser("AnimeFan99", "naruto2023", []),
+  Makeuser("DarkKnight", "batman123", []),
+  Makeuser("LightYagami", "kiraRules", []),
+  Makeuser("LeviAckerman", "surveyCorp", []),
+  Makeuser("ItachiUchiha", "sharingan007", []),
+  Makeuser("TanjiroKamado", "nezukoForever", []),
+  Makeuser("SaitamaHero", "onepunchMan", []),
+  Makeuser("Abdou", "mypass123", []),
+  Makeuser("Louay", "manga789", []),
+];
+localStorage.setItem("user", JSON.stringify(users));
+//register section
+$("#register").on("click", function () {
+  users.push(Makeuser($("#new-username").val(), $("#new-password").val()));
+  localStorage.setItem("user", JSON.stringify(users));
+  console.log($("#username").val());
+  $("#username").val("");
+  $("#new-password").val("");
+});
 
 //login section
-  $('#login').on('click',function(){
-    if(localStorage.getItem("user").includes($("#username").val())){
-      $("#loginlink").html($("#username").val())
-      localStorage.setItem("login",$("#username").val())
-      location.replace("index.html")
-    }
-  })
+$("#login").on("click", function () {
+  if (localStorage.getItem("user").includes($("#username").val())) {
+    $("#loginlink").html($("#username").val());
+    localStorage.setItem("login", $("#username").val());
+    location.replace("index.html");
+  }
+});
 
-  
+// when logged in
 
-
-  // when logged in
-
-  if(localStorage.getItem("login",$("#username").val())==undefined){
-    $("#loginlink").html("Login") 
-    $(".Bookmark").show()
-    $(".Bookmark").on("click",function(){
-      $(this)
-    })
-    $('#logoutlink').hide()
+if (localStorage.getItem("login") === null) {  // Check if login key is missing or user is not logged in
+  $("#loginlink").html("Login");
+  $(".Bookmark").hide();  // Hide bookmark button when not logged in
+  $("#logoutlink").hide();
+} else {
+  $("#loginlink").html(localStorage.getItem("login"));
+  $("#registerlink").hide();
+  $(".Bookmark").show();  // Show bookmark button when logged in
 }
-  else{ $("#loginlink").html( localStorage.getItem("login",$("#username").val()))&&$("#registerlink").hide()}
 
-  //lo
-  
 
-  //toggle light and Dark mode
-  $('#togglemode').on('click', function(){ 
-    if($("#mode").attr("href")==="./css/light.css"){
-      $("#mode").attr("href","./css/dark.css")
-    }  
-    else if( $("#mode").attr("href")==="./css/dark.css"){
-      ($("#mode").attr("href","./css/light.css"))
-    }
-  })
 
-  $('#togglemode').on('click', function(){ 
-    console.log($("#mode").attr("href"));
-    
-    if($("#mode").attr("href")==="./css/register.css"){
-      $("#mode").attr("href","./css/registerdarkstyle.css")
-    }  
-    else if( $("#mode").attr("href")==="./css/registerdarkstyle.css"){
-      ($("#mode").attr("href","./css/register.css"))
-    }
-  })
+//lo
 
-  // 
- 
+//toggle light and Dark mode
+$("#togglemode").on("click", function () {
+  if ($("#mode").attr("href") === "./css/light.css") {
+    $("#mode").attr("href", "./css/dark.css");
+  } else if ($("#mode").attr("href") === "./css/dark.css") {
+    $("#mode").attr("href", "./css/light.css");
+  }
+});
 
-  // Function to change image on hover
+$("#togglemode").on("click", function () {
+  console.log($("#mode").attr("href"));
 
+  if ($("#mode").attr("href") === "./css/register.css") {
+    $("#mode").attr("href", "./css/registerdarkstyle.css");
+  } else if ($("#mode").attr("href") === "./css/registerdarkstyle.css") {
+    $("#mode").attr("href", "./css/register.css");
+  }
+});
+
+//
+
+// Function to change image on hover
 
 function enableImageHoverEffect() {
-  $('.manga').hover(
-      function () {
-          var  parentDivId = $(this).closest('.eachmanga').attr('id');
-          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
+  $(".manga").hover(
+    function () {
+      var parentDivId = $(this).closest(".eachmanga").attr("id");
+      var mangaItem = mangaList.find(function (item) {
+        return item.name.replace(" ", "_") === parentDivId;
+      });
 
-          if (mangaItem) {
-              var  index = 0;
-              var  imageElement = $(this);
+      if (mangaItem) {
+        var index = 0;
+        var imageElement = $(this);
 
-              // Start changing the image every 0.5 seconds
-              var  intervalId = setInterval(function ()  {
-                  index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
-                  imageElement.attr('src', mangaItem.imageGallery[index]);
-              }, 1000);
+        // Start changing the image every 0.5 seconds
+        var intervalId = setInterval(function () {
+          index = (index + 1) % mangaItem.imageGallery.length; // Loop through the gallery
+          imageElement.attr("src", mangaItem.imageGallery[index]);
+        }, 1000);
 
-              // Store the interval ID in the element's data
-              $(this).data('intervalId', intervalId);
-          }
-      },
-      function () {
-          // Stop changing the image when the hover ends
-          clearInterval($(this).data('intervalId'));
-
-          // Reset the image back to the main one
-          var  parentDivId = $(this).closest('.eachmanga').attr('id');
-          var  mangaItem = mangaList.find(item => item.name.replace(" ", "_") === parentDivId);
-          if (mangaItem) {
-              $(this).attr('src', mangaItem.src);
-          }
+        // Store the interval ID in the element's data
+        $(this).data("intervalId", intervalId);
       }
+    },
+    function () {
+      // Stop changing the image when the hover ends
+      clearInterval($(this).data("intervalId"));
+
+      // Reset the image back to the main one
+      var parentDivId = $(this).closest(".eachmanga").attr("id");
+      var mangaItem = mangaList.find(function (item) {
+        return item.name.replace(" ", "_") === parentDivId;
+      });
+
+      if (mangaItem) {
+        $(this).attr("src", mangaItem.src);
+      }
+    }
   );
 }
 
 // Call the function after appending manga elements
 enableImageHoverEffect();
 
-
 function login() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  let users = JSON.parse(localStorage.getItem("user"));
-  let user = users.find((user) => user.username === username && user.password === password);
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var users = JSON.parse(localStorage.getItem("user"));
+  var user = users.find(function (user) {
+    return user.username === username && user.password === password;
+  });
+
   if (user) {
     localStorage.setItem("login", username);
     location.replace("index.html");
   } else {
     alert("Invalid username or password");
   }
-} ;
+}
 
 function logout() {
   localStorage.removeItem("login");
   location.replace("index.html");
 }
 
+$(".Bookmark").on("click", function () {
+  var parentDivId = $(this).closest(".eachmanga").attr("id");
 
-  
+  var mangaItem = mangaList.find(function (item) {
+    return item.name.replace(/\s+/g, "_") === parentDivId;
+  });
 
+  if (!mangaItem) {
+    alert("Manga not found!");
+    return;
+  }
 
-  
-  
+  var loggedInUsername = localStorage.getItem("login");
+  var users = JSON.parse(localStorage.getItem("user"));
+
+  if (!loggedInUsername || !users) {
+    alert("User not logged in or user data missing.");
+    return;
+  }
+
+  var user = users.find(function (user) {
+    return user.username === loggedInUsername;
+  });
+
+  if (!user) {
+    alert("User not found.");
+    return;
+  }
+
+  if (!Array.isArray(user.bookmark)) {
+    user.bookmark = [];
+  }
+
+  var bookmarkIndex = user.bookmark.indexOf(mangaItem.name);
+
+  if (bookmarkIndex > -1) {
+    user.bookmark.splice(bookmarkIndex, 1);
+    alert(mangaItem.name + " has been removed from your bookmarks.");
+  } else {
+    user.bookmark.push(mangaItem.name);
+    alert(mangaItem.name + " has been bookmarked successfully!");
+  }
+
+  localStorage.setItem("user", JSON.stringify(users));
+});
+
+$(document).ready(function () {
+  var footer = `
+    <footer>
+      <div class="footer-content">
+        <h3>ALmanga</h3>
+        <p>developed by abdelmajid & louay</p></p>
+        <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy; <a href="https://www.termsfeed.com/blog/copyright-laws-linking-sources/">TermsFeed</a></p>
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="mailto: abdoumaamar1@gmail.com">Contact</a></li>
+          
+          </ul>
+        </div>
+      </div>
+    </footer>
+  `;
+  $("#footer").html(footer);
+});

@@ -1,7 +1,7 @@
 /* Dark Mode CSS */
 body {
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,8 +9,8 @@ body {
 }
 
 header#mainheader {
-    background-color: black;
-    border-bottom: 1px solid black;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -19,28 +19,39 @@ header#mainheader {
 }
 
 header#mainheader img#logo {
-    width: 500px;
+    width: 300px;
+    margin: auto 20px;
     height: auto;
     cursor: pointer;
+    border-radius: 12px;
 }
 
 header#mainheader h1 {
     cursor: pointer;
+    color: #e0e0e0;
 }
 
-header#mainheader input#searchplace {
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 3px;
-    background-color: black;
-    color: white;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+}
+
+#searchplace {
+    border-radius: 25px;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
 }
 
 header#mainheader button#searchbtn {
     padding: 5px 10px;
     background-color: #4caf50;
-    color: black;
+    color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -57,11 +68,10 @@ header#mainheader div {
 }
 
 header#mainheader button#loginlink,
-header#mainheader button#registerlink,
-header#mainheader button#logout{
+header#mainheader button#registerlink {
     padding: 5px 10px;
-    background-color: purple;
-    color: black;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -70,7 +80,7 @@ header#mainheader button#logout{
 
 header#mainheader button#loginlink:hover,
 header#mainheader button#registerlink:hover {
-    background-color: purple;
+    background-color: #0069d9;
 }
 
 main.mainpage {
@@ -84,64 +94,125 @@ main.mainpage .content {
     justify-content: space-between;
 }
 
-
-main.mainpage .content div {
-    background-color: black;
-    border: 1px solid black;
+main.mainpage .content div, #register-form, #login-form {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
     border-radius: 3px;
+    align-items: center;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(255, 234, 234, 0.714);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, border-color 0.3s ease;
     padding: 10px;
     border-radius: 12px;
 }
 
+#register-form, #login-form {
+    width: 40%;
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form span, #register-form span {
+    text-align: left;
+    font-weight: bold;
+    padding: 12px;
+    color: #e0e0e0;
+}
+
+.login-username, .login-password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eachmanga {
+    padding: 10px;   
+    align-items: center;
+}
+
+#login-form button, #register-form button {
+    cursor: pointer;
+    margin: 12px;
+    padding: 8px;
+    width: 30%;
+    border-radius: 12px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+#login-form button:hover, #register-form button:hover {
+    color: #444;
+    background-color: #fff;
+    border: 1px solid #444;
+}
+
+.Bookmark {
+    bottom: 0;
+    cursor: pointer;
+    padding: 8px;
+    width: 30%;
+    border-radius: 12px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+#register-form input, #login-form input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #444;
+    width: 80%;
+    height: 30px;
+    border-radius: 12px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+#register-main, #login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px auto;    
+}
 
 main.mainpage .content img.manga {
     width: 100%;
     height: 500px;
 }
-.mangaa , .quotes{
+
+.mangaa, .quotes {
     margin: 12px;
     padding: 10px;
+    color: #e0e0e0;
 }
 
 main.mainpage .content h1 {
     padding: 10px;
     font-size: 1.2em;
     text-align: center;
-    background-color: black;
+    background-color: #333;
     margin: 0;
-    color: white;
+    color: #e0e0e0;
 }
-
-footer {
-    background-color: black;
-    border-top: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease, border-top 0.3s ease;
-}
-
-footer p {
-    margin: 0;
-    color: #666;
-}
-
-/* Toggle Button Styling */
 #togglemode {
-  
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: purple;
-    color: black;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(255, 188, 188, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -152,4 +223,115 @@ footer p {
 
 #togglemode:active {
     background-color: #003f7f;
+}
+
+footer{
+    background: #111;
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+
+
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.footer-menu{
+  float: right;
+
+}
+.footer-menu ul{
+  display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 }
