@@ -175,39 +175,40 @@ localStorage.setItem("mangalist", JSON.stringify(mangaList));
 
 // add the images to the html
 mangaList.map(function (element) {
-  $(".content").append(`<div class="eachmanga"
-             id=${element.name.replace(" ", "_")} >
-             <div class="mangaa" > <img  class="manga" src=${element.src}
-                alt=${element.name.replace(" ", "_")} >
-                <p></p>Chapter: ${element.chapter}</p></div>
-                <div class="quotes">
-                <h2 >Genre</h2>
-                <p >${element.genres}</p>
-                <h2 >Quotes:</h2>
-                <p   >${
-                  element.quotes[
-                    Math.floor(Math.random() * element.quotes.length)
-                  ]
-                }</p>
-                </div>
-                  <h2 style="padding:10px" >${element.name} </h2>
-                  <button class="Bookmark">Bookmark</button>
-               
-                  </div>`);
+  $(".content").append(`
+    <div class="eachmanga" name="${element.name}">
+      <div class="mangaa">
+        <img class="manga" src="${
+          element.src
+        }" alt="${element.name.replace(" ", "_")}">
+        <p>Chapter: ${element.chapter}</p>
+      </div>
+      <div class="quotes">
+        <h2>Genre</h2>
+        <p>${element.genres}</p>
+        <h2>Quotes:</h2>
+        <p>${
+          element.quotes[Math.floor(Math.random() * element.quotes.length)]
+        }</p>
+      </div>
+      <h2 style="padding:10px">${element.name}</h2>
+      <button class="Bookmark">Bookmark</button>
+    </div>
+  `);
 });
+
 $(".Bookmark").hide();
 var input = $("#searchplace");
-var manga = $(".manga");
 
-//search with button
+// Search with button
 $("#searchbtn").on("click", function () {
-  manga.each(function () {
-    var x = $(this) || manga;
-
-    if (x.attr("alt").toLowerCase().includes(input.val().toLowerCase())) {
-      $(this).parent().parent().show();
+  $(".eachmanga").each(function () {
+    var x = $(this);
+    if (x.attr("name").toLowerCase().includes(input.val().toLowerCase())) {
+      console.log(x.attr("name"));
+      x.show();
     } else {
-      $(this).parent().parent().hide();
+      x.hide();
     }
   });
 });
@@ -216,23 +217,21 @@ $("#searchbtn").on("click", function () {
 $("#searchplace").on("keypress", function (event) {
   if (event.which === 13) {
     console.log(input.val());
-    manga.each(function () {
-      if (
-        $(this)
-          .attr("alt")
-          .toLowerCase()
-          .includes(input.val().replace(" ", "_").toLowerCase())
-      ) {
-        console.log($(this).attr("alt").toLowerCase());
+    $(".eachmanga").each(function () {
+      var x = $(this);
 
-        $(this).parent().parent().show();
+      if (x.attr("name").toLowerCase().includes(input.val().toLowerCase())) {
+        console.log(x.attr("name").toLowerCase());
+        x.show();
       } else {
-        $(this).parent().parent().hide();
+        x.hide();
       }
     });
+
     input.val("");
   }
 });
+
 // headr buttons
 $("#registerlink").on("click", function () {
   location.replace("registerindex.html");
@@ -291,17 +290,15 @@ $("#login").on("click", function () {
 
 // when logged in
 
-if (localStorage.getItem("login") === null) {  // Check if login key is missing or user is not logged in
+if (localStorage.getItem("login") === null) {
   $("#loginlink").html("Login");
-  $(".Bookmark").hide();  // Hide bookmark button when not logged in
+  $(".Bookmark").hide();
   $("#logoutlink").hide();
 } else {
   $("#loginlink").html(localStorage.getItem("login"));
   $("#registerlink").hide();
-  $(".Bookmark").show();  // Show bookmark button when logged in
+  $(".Bookmark").show();
 }
-
-
 
 //lo
 
@@ -390,17 +387,16 @@ function logout() {
   localStorage.removeItem("login");
   location.replace("index.html");
 }
-
+// bookmark function
 $(".Bookmark").on("click", function () {
-  var parentDivId = $(this).closest(".eachmanga").attr("id");
+  var parentDivName = $(this).closest(".eachmanga").attr("name");
 
   var mangaItem = mangaList.find(function (item) {
-    return item.name.replace(/\s+/g, "_") === parentDivId;
+    return item.name === parentDivName;
   });
 
   if (!mangaItem) {
     alert("Manga not found!");
-    return;
   }
 
   var loggedInUsername = localStorage.getItem("login");
@@ -437,6 +433,7 @@ $(".Bookmark").on("click", function () {
   localStorage.setItem("user", JSON.stringify(users));
 });
 
+// footer
 $(document).ready(function () {
   var footer = `
     <footer>
